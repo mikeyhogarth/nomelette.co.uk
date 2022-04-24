@@ -18,11 +18,11 @@ export default function RecipePage({ recipe }: Props) {
         <title>{recipe.name} | Nomelette</title>
       </Head>
       <h1>{recipe.name}</h1>
-      <ul>
+      <ul className="tag-list">
         {recipe.tags.map((tag) => (
           <li key={tag}>
             <Link href={`/tagged-with/${tag}`}>
-              <a>#{tag}</a>
+              <a>{tag}</a>
             </Link>
           </li>
         ))}

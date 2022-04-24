@@ -19,7 +19,8 @@ module.exports = {
         base: ["1.1em", { lineHeight: "1.8em" }],
       },
       fontFamily: {
-        typewriter: ["Courier New", "Courier", "monospace"],
+        sans: ["Lato", "sans-serif"],
+        brand: ["Leckerli One", "cursive"],
       },
     },
   },

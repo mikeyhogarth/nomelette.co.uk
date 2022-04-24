@@ -39,6 +39,18 @@ class MyDocument extends Document {
             href="media/icons/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+
+          {/* Webfonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="crossorigin"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato&family=Leckerli+One&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

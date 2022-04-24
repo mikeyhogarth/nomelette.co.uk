@@ -6,10 +6,6 @@ h1 {
   @apply text-5xl print:text-3xl pt-6;
 }
 
-main h1 {
-  @apply border-b border-gray-200 pb-8 leading-tight;
-}
-
 h2 {
   @apply text-3xl mt-14;
 }

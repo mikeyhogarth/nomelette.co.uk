@@ -14,7 +14,7 @@ function formatIngredientBlocks(rawIngredients: /*lol*/ string): string[][] {
     .replace(/3\/4/g, "¾")
     .split("--")
     .filter((n) => n.length)
-    .map((block) => block.split("\n"));
+    .map((block) => block.split("\n").filter((n) => n.length));
 }
 
 export default function IngredientsBlock({ content }: Props) {

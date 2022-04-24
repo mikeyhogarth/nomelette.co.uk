@@ -3,7 +3,7 @@ interface Props {
 }
 
 function formatMethod(rawMethod: string): string[] {
-  return rawMethod.split("\n");
+  return rawMethod.split("\n").filter((n) => n.length);
 }
 
 export default function MethodBlock({ content }: Props) {

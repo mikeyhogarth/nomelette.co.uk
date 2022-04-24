@@ -10,24 +10,15 @@ interface Props {
 
 export default function Home({ recipes }: Props) {
   return (
-    <div>
+    <>
       <Head>
         <title>Nomelette</title>
         <meta name="description" content="Recipes of Shiela Hogarth" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <ul>
-          {recipes.map((r) => (
-            <li key={r.name}>
-              <Link href={`/recipes/${r.slug.current}`}>
-                <a>{r.name}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
+
+      <p>Home page content</p>
+    </>
   );
 }
 

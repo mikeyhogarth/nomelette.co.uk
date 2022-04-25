@@ -9,17 +9,13 @@ export default function Navigation() {
     <nav className="text-right relative w-full">
       <button
         aria-label="Open Menu"
-        className="md:hidden p-3 rounded-full hover:bg-primaryDarker"
+        className="md:hidden text-xl p-3 rounded-full hover:bg-primaryDarker transition"
         onClick={(e) => setOpen(!open)}
       >
         <FaBars />
       </button>
 
-      <ul
-        className={`${
-          open ? "block" : "hidden"
-        } md:inline-block list-none my-0 py-0`}
-      >
+      <ul className={`${open ? "h-screen" : "h-0"} text-lg md:h-fit`}>
         <NavLink href="/" text="Home" setOpen={setOpen} />
         <NavLink href="/recipes" text="Browse" setOpen={setOpen} />
         <NavLink href="/books" text="Books" setOpen={setOpen} />
@@ -36,7 +32,7 @@ interface NavLinkProps {
 
 function NavLink({ href, text, setOpen }: NavLinkProps) {
   return (
-    <li className="inline-block">
+    <li className="md:inline-block">
       <Link href={href}>
         <a className="hover:underline" onClick={() => setOpen(false)}>
           {text}

@@ -12,8 +12,12 @@ ul.tag-list li a {
 }
 
 /* Nav */
+nav ul {
+  @apply overflow-hidden fixed md:relative transition-height ease-in-out duration-500 md:inline-block text-center md:text-right w-full left-0 bg-black md:bg-transparent list-none my-2 md:my-0 py-0;
+}
+
 nav ul li {
-  @apply ml-6;
+  @apply ml-6 text-2xl md:text-base py-4 md:py-0;
 }
 
 /* Blockquote */

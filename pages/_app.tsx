@@ -8,8 +8,8 @@ import Navigation from "../components/Navigation";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <header className="px-10 bg-primary text-white print:hidden flex flex-row">
-        <h1 className="font-brand text-3xl drop-shadow-lg inline-block">
+      <header className="px-10 bg-primary text-white print:hidden flex flex-row py-2 md:py-5">
+        <h1 className="font-brand text-3xl drop-shadow-lg inline-block my-0 py-0">
           <Link href={`/`}>
             <a>Nomelette</a>
           </Link>

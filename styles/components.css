@@ -10,3 +10,13 @@ ul.tag-list li {
 ul.tag-list li a {
   @apply bg-primary text-white no-underline hover:bg-highlight py-1 px-2 rounded-md;
 }
+
+/* Nav */
+nav ul li {
+  @apply ml-6;
+}
+
+/* Blockquote */
+blockquote {
+  @apply bg-gray-100 italic p-5 border-l-8 border-l-gray-200 my-5;
+}

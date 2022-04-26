@@ -23,7 +23,7 @@ export default function IngredientsBlock({ content }: Props) {
   const multiBlock = ingredientBlocks.length > 1;
 
   return (
-    <div>
+    <>
       <h2>Ingredients</h2>
       {ingredientBlocks.map((block, blockIndex) => (
         <Fragment key={`intredientBlock__${blockIndex}`}>
@@ -35,6 +35,6 @@ export default function IngredientsBlock({ content }: Props) {
           </ul>
         </Fragment>
       ))}
-    </div>
+    </>
   );
 }

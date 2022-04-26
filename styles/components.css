@@ -12,6 +12,10 @@ ul.tag-list li a {
 }
 
 /* Nav */
+nav button {
+  @apply md:hidden text-xl p-3 rounded-full hover:bg-primaryDarker transition;
+}
+
 nav ul {
   @apply overflow-hidden fixed md:relative transition-height ease-in-out duration-500 md:inline-block text-center md:text-right w-full left-0 bg-black md:bg-transparent list-none my-2 md:my-0 py-0;
 }
@@ -20,7 +24,13 @@ nav ul li {
   @apply ml-6 text-2xl md:text-base py-4 md:py-0;
 }
 
-/* Blockquote */
+/* Callout or blockquote */
+.callout,
 blockquote {
   @apply bg-gray-100 italic p-5 border-l-8 border-l-gray-200 my-5;
+}
+
+.callout p,
+blockquote p {
+  @apply my-2;
 }

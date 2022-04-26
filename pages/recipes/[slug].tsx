@@ -1,11 +1,12 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
-import { PortableText } from "@portabletext/react";
 import { Recipe } from "../../types";
 import Head from "next/head";
 import { allSlugs, getRecipe } from "../../services/sanity/contentServices";
 import IngredientsBlock from "../../components/IngredientsBlock";
 import MethodBlock from "../../components/MethodBlock";
+import Callout from "../../components/Callout";
+import { PortableText } from "@portabletext/react";
 
 interface Props {
   recipe: Recipe;
@@ -27,8 +28,14 @@ export default function RecipePage({ recipe }: Props) {
           </li>
         ))}
       </ul>
-      <PortableText value={recipe.description} />
+      {recipe.description && (
+        <Callout>
+          <PortableText value={recipe.description} />
+        </Callout>
+      )}
       <dl>
+        <dt>Vegetarian</dt>
+        <dd>{recipe.vegetarian ? "Yes" : "No"}</dd>
         {recipe.preparation_time && (
           <>
             <dt>Preparation Time</dt>
@@ -50,7 +57,11 @@ export default function RecipePage({ recipe }: Props) {
       </dl>
       <IngredientsBlock content={recipe.ingredients} />
       <MethodBlock content={recipe.method} />
-      <PortableText value={recipe.footnote} />
+      {recipe.footnote && (
+        <Callout>
+          <PortableText value={recipe.footnote} />
+        </Callout>
+      )}
     </div>
   );
 }

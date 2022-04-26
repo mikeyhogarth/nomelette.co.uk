@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaBars } from "react-icons/fa";
+import { FaBars as FaHamburgerMenu, FaTimes as FaClose } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -7,15 +7,11 @@ export default function Navigation() {
 
   return (
     <nav className="text-right relative w-full">
-      <button
-        aria-label="Open Menu"
-        className="md:hidden text-xl p-3 rounded-full hover:bg-primaryDarker transition"
-        onClick={(e) => setOpen(!open)}
-      >
-        <FaBars />
+      <button aria-label="Open Menu" onClick={(e) => setOpen(!open)}>
+        {open ? <FaClose /> : <FaHamburgerMenu />}
       </button>
 
-      <ul className={`${open ? "h-screen" : "h-0"} text-lg md:h-fit`}>
+      <ul className={`${open ? "h-screen" : "h-0"} md:h-fit`}>
         <NavLink href="/" text="Home" setOpen={setOpen} />
         <NavLink href="/recipes" text="Browse" setOpen={setOpen} />
         <NavLink href="/books" text="Books" setOpen={setOpen} />

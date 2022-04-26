@@ -1,12 +1,13 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
 import { Recipe } from "../../types";
+import { FaClock, FaUserClock, FaUserFriends, FaLeaf } from "react-icons/fa";
 import Head from "next/head";
 import { allSlugs, getRecipe } from "../../services/sanity/contentServices";
 import IngredientsBlock from "../../components/IngredientsBlock";
 import MethodBlock from "../../components/MethodBlock";
 import Callout from "../../components/Callout";
-import { PortableText } from "@portabletext/react";
+import { PortableText, toPlainText } from "@portabletext/react";
 
 interface Props {
   recipe: Recipe;
@@ -14,7 +15,7 @@ interface Props {
 
 export default function RecipePage({ recipe }: Props) {
   return (
-    <div>
+    <article className="recipe">
       <Head>
         <title>{recipe.name} | Nomelette</title>
       </Head>
@@ -28,41 +29,50 @@ export default function RecipePage({ recipe }: Props) {
           </li>
         ))}
       </ul>
-      {recipe.description && (
-        <Callout>
-          <PortableText value={recipe.description} />
-        </Callout>
+      {toPlainText(recipe.description).length > 0 && (
+        <PortableText value={recipe.description} />
       )}
-      <dl>
-        <dt>Vegetarian</dt>
+      <dl className="mt-6">
+        <dt>
+          <FaLeaf className="inline-block mr-1 -top" /> Vegetarian
+        </dt>
         <dd>{recipe.vegetarian ? "Yes" : "No"}</dd>
         {recipe.preparation_time && (
           <>
-            <dt>Preparation Time</dt>
+            <dt>
+              <FaUserClock className="inline-block mr-1 -top" />
+              Preparation
+            </dt>
             <dd>{recipe.preparation_time}</dd>
           </>
         )}
         {recipe.cooking_time && (
           <>
-            <dt>Cooking Time</dt>
+            <dt>
+              <FaClock className="inline-block mr-1 -top" /> Cooking
+            </dt>
             <dd>{recipe.cooking_time}</dd>
           </>
         )}
         {recipe.serves && (
           <>
-            <dt>Serves</dt>
+            <dt>
+              <FaUserFriends className="inline-block mr-1 -top" />
+              Serves
+            </dt>
             <dd>{recipe.serves}</dd>
           </>
         )}
       </dl>
+
       <IngredientsBlock content={recipe.ingredients} />
       <MethodBlock content={recipe.method} />
-      {recipe.footnote && (
+      {toPlainText(recipe.footnote).length > 0 && (
         <Callout>
           <PortableText value={recipe.footnote} />
         </Callout>
       )}
-    </div>
+    </article>
   );
 }
 

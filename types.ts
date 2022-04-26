@@ -14,10 +14,10 @@ export interface Recipe {
   cooking_time: string;
   preparation_time: string;
   tags: string[];
-  description: BlockContent;
+  description: BlockContent[];
   ingredients: string;
   method: string;
-  footnote: BlockContent;
+  footnote: BlockContent[];
   vegetarian: boolean;
   book: any;
 }
@@ -25,6 +25,6 @@ export interface Recipe {
 export interface Book {
   title: string;
   slug: Slug;
-  description: BlockContent;
+  description: BlockContent[];
   recipes: Recipe[];
 }

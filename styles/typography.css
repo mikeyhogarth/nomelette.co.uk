@@ -3,11 +3,15 @@ Headings
 */
 
 h1 {
-  @apply text-5xl print:text-3xl pt-6;
+  @apply text-4xl print:text-3xl pt-6;
 }
 
 main h1 {
   @apply border-b border-gray-200 pb-6;
+}
+
+main {
+  @apply font-sans;
 }
 
 h2 {
@@ -23,12 +27,31 @@ h5 {
   @apply text-lg;
 }
 
+body {
+  @apply text-black;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  @apply text-secondary;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
   @apply my-6 mt-10;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5 {
+  @apply uppercase tracking-widest font-bold;
 }
 
 p {

@@ -1,6 +1,6 @@
 /* Recipe Info */
 .recipe dl {
-  @apply flex flex-row flex-wrap md:w-1/3 border;
+  @apply flex flex-row flex-wrap md:w-96 border;
 }
 
 .recipe dl dt,
@@ -9,9 +9,14 @@
 }
 
 .recipe dl dt {
-  @apply text-gray-700 bg-gray-100 basis-4/12 font-extrabold border-r;
+  @apply text-gray-700 bg-gray-100 basis-6/12 font-semibold border-r;
 }
 
 .recipe dl dd {
-  @apply bg-gray-50 basis-8/12 flex-grow overflow-hidden italic;
+  @apply bg-gray-50 basis-6/12 flex-grow overflow-hidden italic;
+}
+
+/* Recipe Image */
+.main-recipe-image {
+  @apply w-fit md:inline-block lg:float-right lg:inline bg-gray-100 border border-gray-200 px-2 py-2 lg:ml-4 lg:mb-4;
 }

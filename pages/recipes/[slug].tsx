@@ -8,6 +8,8 @@ import IngredientsBlock from "../../components/IngredientsBlock";
 import MethodBlock from "../../components/MethodBlock";
 import Callout from "../../components/Callout";
 import { PortableText, toPlainText } from "@portabletext/react";
+import Image from "next/image";
+import { urlForImage } from "../../services/sanity/imageServices";
 
 interface Props {
   recipe: Recipe;
@@ -19,7 +21,22 @@ export default function RecipePage({ recipe }: Props) {
       <Head>
         <title>{recipe.name} | Nomelette</title>
       </Head>
-      <h1>{recipe.name}</h1>
+      <h1>
+        {recipe.name}{" "}
+        {recipe.vegetarian && <span className="text-green-600">(v)</span>}
+      </h1>
+      {recipe.image && (
+        <div className="main-recipe-image">
+          <Image
+            src={urlForImage(recipe.image).width(500).height(500).url()}
+            alt={`Picture of ${recipe.name}`}
+            width={500}
+            height={500}
+          />
+          <caption className="w-full block italic">{recipe.name}</caption>
+        </div>
+      )}
+
       <ul className="tag-list">
         {recipe.tags.map((tag) => (
           <li key={tag}>
@@ -33,14 +50,10 @@ export default function RecipePage({ recipe }: Props) {
         <PortableText value={recipe.description} />
       )}
       <dl className="mt-6">
-        <dt>
-          <FaLeaf className="inline-block mr-1 -top" /> Vegetarian
-        </dt>
-        <dd>{recipe.vegetarian ? "Yes" : "No"}</dd>
         {recipe.preparation_time && (
           <>
             <dt>
-              <FaUserClock className="inline-block mr-1 -top" />
+              <FaUserClock className="inline-block mr-1 " />
               Preparation
             </dt>
             <dd>{recipe.preparation_time}</dd>
@@ -49,7 +62,7 @@ export default function RecipePage({ recipe }: Props) {
         {recipe.cooking_time && (
           <>
             <dt>
-              <FaClock className="inline-block mr-1 -top" /> Cooking
+              <FaClock className="inline-block mr-1 " /> Cooking
             </dt>
             <dd>{recipe.cooking_time}</dd>
           </>
@@ -57,7 +70,7 @@ export default function RecipePage({ recipe }: Props) {
         {recipe.serves && (
           <>
             <dt>
-              <FaUserFriends className="inline-block mr-1 -top" />
+              <FaUserFriends className="inline-block mr-1 " />
               Serves
             </dt>
             <dd>{recipe.serves}</dd>

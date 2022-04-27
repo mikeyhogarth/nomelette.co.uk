@@ -33,6 +33,11 @@ export default {
       type: "string",
     },
     {
+      name: "image",
+      title: "Image",
+      type: "image",
+    },
+    {
       title: "Tags",
       name: "tags",
       type: "array",

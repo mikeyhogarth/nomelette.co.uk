@@ -11,7 +11,7 @@ export default function Navigation() {
         {open ? <FaClose /> : <FaHamburgerMenu />}
       </button>
 
-      <ul className={`${open ? "h-screen" : "h-0"} md:h-fit`}>
+      <ul className={`${open ? "h-screen" : "h-0"} md:h-fit z-10`}>
         <NavLink href="/" text="Home" setOpen={setOpen} />
         <NavLink href="/recipes" text="Browse" setOpen={setOpen} />
         <NavLink href="/books" text="Books" setOpen={setOpen} />

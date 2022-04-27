@@ -1,3 +1,5 @@
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 export interface Slug {
   current: string;
 }
@@ -12,6 +14,7 @@ export interface Recipe {
   slug: Slug;
   serves: string;
   cooking_time: string;
+  image: SanityImageSource;
   preparation_time: string;
   tags: string[];
   description: BlockContent[];

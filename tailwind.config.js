@@ -12,18 +12,17 @@ module.exports = {
         print: { raw: "print" },
       },
       colors: {
-        black: "#212121",
+        black: "#414141",
         white: "#FDFDFD",
         primary: "#00d2d1",
-        primaryDarker: "#119190",
-        secondary: "blue",
+        primaryDarker: "#00a7a7",
+        secondary: "#ee554b",
         highlight: "#03fcfc",
       },
       fontSize: {
         base: ["1.1em", { lineHeight: "1.8em" }],
       },
       fontFamily: {
-        sans: ["Lato", "sans-serif"],
         brand: ["Leckerli One", "cursive"],
       },
     },

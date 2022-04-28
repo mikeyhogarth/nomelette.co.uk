@@ -21,7 +21,7 @@ nav ul {
 }
 
 nav ul li {
-  @apply ml-6 text-2xl md:text-base py-4 md:py-0;
+  @apply ml-6 text-2xl md:text-xl py-4 md:py-0;
 }
 
 /* Callout or blockquote */

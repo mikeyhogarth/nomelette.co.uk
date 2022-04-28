@@ -12,9 +12,11 @@ export default function MethodBlock({ content }: Props) {
   return (
     <>
       <h2>Method</h2>
-      <ol>
+      <ol className="method-list">
         {methodList.map((line, idx) => (
-          <li key={idx}>{line}</li>
+          <li className="my-4 mx-0" key={idx}>
+            {line}
+          </li>
         ))}
       </ol>
     </>

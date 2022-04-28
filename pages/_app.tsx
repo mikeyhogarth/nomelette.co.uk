@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 //const marginClasses = "px-5 mb-20 lg:px-20 xl:px-40 pt-6 md:pt-16";
 
@@ -17,9 +18,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
         <Navigation />
       </header>
-      <main className="px-10">
+      <main className="px-10 min-h-fit" style={{ minHeight: "60vh" }}>
         <Component {...pageProps} />
       </main>
+      <Footer />
     </>
   );
 }

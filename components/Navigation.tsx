@@ -13,6 +13,7 @@ export default function Navigation() {
 
       <ul className={`${open ? "h-screen" : "h-0"} md:h-fit z-10`}>
         <NavLink href="/" text="Home" setOpen={setOpen} />
+        <NavLink href="/about" text="About" setOpen={setOpen} />
         <NavLink href="/recipes" text="Browse" setOpen={setOpen} />
         <NavLink href="/books" text="Books" setOpen={setOpen} />
       </ul>

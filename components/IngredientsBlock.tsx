@@ -28,9 +28,11 @@ export default function IngredientsBlock({ content }: Props) {
       {ingredientBlocks.map((block, blockIndex) => (
         <Fragment key={`intredientBlock__${blockIndex}`}>
           {multiBlock && <h3>{block[0]}</h3>}
-          <ul>
+          <ul className="list-none">
             {block.slice(multiBlock ? 1 : 0).map((line, lineIndex) => (
-              <li key={`intredientLine__${lineIndex}`}>{line}</li>
+              <li className="ml-0 italic" key={`intredientLine__${lineIndex}`}>
+                {line}
+              </li>
             ))}
           </ul>
         </Fragment>

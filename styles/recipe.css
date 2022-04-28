@@ -20,3 +20,16 @@
 .main-recipe-image {
   @apply w-fit md:inline-block lg:float-right lg:inline bg-gray-100 border border-gray-200 px-2 py-2 lg:ml-4 lg:mb-4;
 }
+
+/* method block */
+ol.method-list {
+  @apply list-none;
+  counter-reset: item;
+}
+ol.method-list li {
+  counter-increment: item;
+}
+ol.method-list li:before {
+  @apply mr-4 w-8 inline-block text-white bg-primary rounded-full text-white text-center;
+  content: counter(item);
+}

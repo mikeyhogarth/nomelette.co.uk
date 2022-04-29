@@ -26,15 +26,17 @@ export default function RecipePage({ recipe }: Props) {
         {recipe.vegetarian && <span className="text-green-600">(v)</span>}
       </h1>
       {recipe.image && (
-        <div className="main-recipe-image">
+        <figure className="main-recipe-image">
           <Image
             src={urlForImage(recipe.image).width(500).height(500).url()}
             alt={`Picture of ${recipe.name}`}
             width={500}
             height={500}
           />
-          <caption className="w-full block italic">{recipe.name}</caption>
-        </div>
+          <figcaption className="w-full text-center block italic">
+            {recipe.name}
+          </figcaption>
+        </figure>
       )}
 
       <ul className="tag-list">
@@ -53,7 +55,7 @@ export default function RecipePage({ recipe }: Props) {
         {recipe.preparation_time && (
           <>
             <dt>
-              <FaUserClock className="inline-block mr-1 " />
+              <FaUserClock className="inline-block mr-1" />
               Preparation
             </dt>
             <dd>{recipe.preparation_time}</dd>
@@ -62,7 +64,7 @@ export default function RecipePage({ recipe }: Props) {
         {recipe.cooking_time && (
           <>
             <dt>
-              <FaClock className="inline-block mr-1 " /> Cooking
+              <FaClock className="inline-block mr-1" /> Cooking
             </dt>
             <dd>{recipe.cooking_time}</dd>
           </>
@@ -70,7 +72,7 @@ export default function RecipePage({ recipe }: Props) {
         {recipe.serves && (
           <>
             <dt>
-              <FaUserFriends className="inline-block mr-1 " />
+              <FaUserFriends className="inline-block mr-1" />
               Serves
             </dt>
             <dd>{recipe.serves}</dd>

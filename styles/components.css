@@ -8,7 +8,7 @@ ul.tag-list li {
 }
 
 ul.tag-list li a {
-  @apply bg-primary text-white no-underline hover:bg-highlight py-1 px-2 rounded-md;
+  @apply bg-primary text-white no-underline py-1 px-2 rounded-md brightness-100;
 }
 
 /* Nav */

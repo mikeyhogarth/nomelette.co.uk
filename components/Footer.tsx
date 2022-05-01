@@ -1,4 +1,4 @@
-import { FaHeart, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaHeart, FaFacebookSquare, FaGithubSquare } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,12 +7,12 @@ export default function Footer() {
       <div className="mb-3 text-center text-4xl text-gray-400">
         <Link href={`https://www.facebook.com/Nomelette/`}>
           <a title="Facebook Community">
-            <FaFacebook className="inline m-2 hover:text-black" />
+            <FaFacebookSquare className="inline m-1 hover:text-black" />
           </a>
         </Link>
-        <Link href="https://github.com/mikeyhogarth/nomelette-client">
-          <a title="Twitter Community">
-            <FaTwitter className="inline m-2 hover:text-black" />
+        <Link href="https://github.com/mikeyhogarth/nomelette.co.uk">
+          <a title="Source Code">
+            <FaGithubSquare className="inline m-1 hover:text-black" />
           </a>
         </Link>
       </div>

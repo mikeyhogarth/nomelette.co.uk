@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import Link from "next/link";
+
 import { Recipe } from "../../types";
 import { FaClock, FaUserClock, FaUserFriends, FaLeaf } from "react-icons/fa";
 import Head from "next/head";
@@ -7,6 +7,7 @@ import { allSlugs, getRecipe } from "../../services/sanity/contentServices";
 import IngredientsBlock from "../../components/IngredientsBlock";
 import MethodBlock from "../../components/MethodBlock";
 import Callout from "../../components/Callout";
+import TagList from "../../components/TagList";
 import { PortableText, toPlainText } from "@portabletext/react";
 import Image from "next/image";
 import { urlForImage } from "../../services/sanity/imageServices";
@@ -21,10 +22,7 @@ export default function RecipePage({ recipe }: Props) {
       <Head>
         <title>{recipe.name} | Nomelette</title>
       </Head>
-      <h1>
-        {recipe.name}{" "}
-        {recipe.vegetarian && <span className="text-green-600">(v)</span>}
-      </h1>
+      <h1>{recipe.name}</h1>
       {recipe.image && (
         <figure className="main-recipe-image">
           <Image
@@ -39,15 +37,8 @@ export default function RecipePage({ recipe }: Props) {
         </figure>
       )}
 
-      <ul className="tag-list">
-        {recipe.tags.map((tag) => (
-          <li key={tag}>
-            <Link href={`/tagged-with/${tag}`}>
-              <a>{tag}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <TagList tags={recipe.tags} />
+
       {toPlainText(recipe.description).length > 0 && (
         <PortableText value={recipe.description} />
       )}

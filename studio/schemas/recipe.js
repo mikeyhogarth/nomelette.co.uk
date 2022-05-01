@@ -71,11 +71,6 @@ export default {
       type: "blockContent",
     },
     {
-      name: "vegetarian",
-      title: "Vegetarian",
-      type: "boolean",
-    },
-    {
       title: "Book",
       name: "book",
       type: "reference",

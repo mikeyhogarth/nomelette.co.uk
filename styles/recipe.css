@@ -27,7 +27,7 @@ ol.method-list {
   counter-reset: item;
 }
 ol.method-list li {
-  @apply my-6 mx-4 leading-8;
+  @apply m-4 leading-8;
   counter-increment: item;
 }
 ol.method-list li:before {

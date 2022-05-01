@@ -7,7 +7,7 @@ h1 {
 }
 
 main h1 {
-  @apply border-b border-gray-200 pb-6;
+  @apply border-b border-gray-200 pb-6 text-4xl;
 }
 
 main {
@@ -43,7 +43,7 @@ h2,
 h3,
 h4,
 h5 {
-  @apply my-6 mt-10;
+  @apply my-6 mt-10 break-words;
 }
 
 main h1,

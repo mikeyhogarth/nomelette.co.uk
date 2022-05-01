@@ -19,6 +19,7 @@ export default function MethodBlock({ content }: Props) {
           </li>
         ))}
       </ol>
+      <hr className="mt-20 mb-12" />
     </>
   );
 }

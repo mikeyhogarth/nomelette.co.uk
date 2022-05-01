@@ -21,7 +21,6 @@ export interface Recipe {
   ingredients: string;
   method: string;
   footnote: BlockContent[];
-  vegetarian: boolean;
   book: any;
 }
 

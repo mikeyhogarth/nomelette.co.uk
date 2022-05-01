@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
-import { Recipe, Book } from "../../types";
+import { Book } from "../../types";
 import Head from "next/head";
 import { getBook, allSlugs } from "../../services/sanity/contentServices";
 
@@ -9,7 +9,6 @@ interface Props {
 }
 
 export default function RecipePage({ book }: Props) {
-  console.log(book);
   return (
     <div>
       <Head>

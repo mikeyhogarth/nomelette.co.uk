@@ -86,3 +86,7 @@ main a {
 main a:hover {
   @apply hover:brightness-110 underline transition-all;
 }
+
+main a:visited {
+  @apply text-secondary;
+}

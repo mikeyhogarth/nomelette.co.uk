@@ -16,10 +16,17 @@ export default function About() {
 
       <h2>What kinds of recipes are featured?</h2>
       <p>
-        Traditional, old-school family recipes - not entirely unhealthy... but
-        mostly they are! They&apos;re being shared to keep them alive. These
-        days people are a little more concious about nutrition and calories, so
-        this is just a fair warning that this is not what Nomelette is offering.
+        In a nutshell this is old-school family recipes - not entirely
+        unhealthy... but also probably not the best things to be eating
+        regularly if you are trying to keep in shape. They&apos;re being shared
+        here to keep them alive. These days people are a little more concious
+        about nutrition and calories (which is a good thing) so this is just a
+        fair warning that &quot;healthy recipes&quot; is not really what
+        Nomelette is offering. What you will find is hearty, filling and
+        traditional recipes which when enjoyed in moderation will be a hit with
+        both yourself and your guests.
+      </p>
+      <p>
         You may also see certain comments throughout the site with a
         &quot;(sic)&quot; aside - we copied down the recipes exactly as written,
         so if Sheila had made a throwaway comment about a recipe being &quot;a

@@ -80,7 +80,7 @@ ul li {
 Links
 */
 main a {
-  @apply text-primary underline brightness-90;
+  @apply text-primary underline;
 }
 
 main a:hover {

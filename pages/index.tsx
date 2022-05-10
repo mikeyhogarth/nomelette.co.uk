@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Recipe } from "../types";
 import { GetStaticProps } from "next";
 import { allRecipes } from "../services/sanity/contentServices";
 import Image from "next/image";
@@ -37,7 +36,7 @@ export default function Home() {
         </div>
         <div className="hidden xl:inline-block">
           <Image
-            className="rounded-full "
+            className="rounded-full"
             src={homepageImage3}
             alt="Image representing home cooking"
             width={300}

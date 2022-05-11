@@ -34,7 +34,7 @@ export default function RecipePage({ tags }: Props) {
   return (
     <div>
       <Head>
-        <title>Tags | Nomelette</title>
+        <title>Browse | Nomelette</title>
       </Head>
       <h1>Browse by Season</h1>
       <ul className="picture-tags">

@@ -60,10 +60,10 @@ export default function Home() {
 
         <div className="mb-14">
           <Link href="/recipes">
-            <a className="btn mx-2">Browse Recipes</a>
+            <a className="btn m-2">Browse Recipes</a>
           </Link>
           <Link href="/about">
-            <a className="btn btn-secondary mx-2">What is Nomelette?</a>
+            <a className="btn btn-secondary m-2">What is Nomelette?</a>
           </Link>
         </div>
         <FaCookieBite className="inline-block text-primary text-4xl" />

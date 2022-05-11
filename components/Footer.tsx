@@ -19,6 +19,11 @@ export default function Footer() {
       <strong>Nomelette</strong> {new Date().getFullYear()} :: Made with
       <FaHeart className="inline mx-1" />
       by Mikey and Laura.
+      <div>
+        <Link href="/privacy">
+          <a className="hover:underline">Privacy statement</a>
+        </Link>
+      </div>
     </footer>
   );
 }

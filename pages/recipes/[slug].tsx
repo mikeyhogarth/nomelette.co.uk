@@ -39,7 +39,7 @@ export default function RecipePage({ recipe }: Props) {
 
       <TagList tags={recipe.tags} />
 
-      {toPlainText(recipe.description).length > 0 && (
+      {recipe.description && toPlainText(recipe.description).length > 0 && (
         <PortableText value={recipe.description} />
       )}
       <dl className="mt-6">

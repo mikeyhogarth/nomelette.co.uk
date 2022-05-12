@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { GetStaticProps } from "next";
-import { allRecipes } from "../services/sanity/contentServices";
 import Image from "next/image";
 import homepageImage1 from "../public/media/images/homepage1.jpg";
 import homepageImage2 from "../public/media/images/homepage2.jpg";
@@ -73,9 +71,3 @@ export default function Home() {
     </>
   );
 }
-
-// This function gets called at build time on server-side.
-export const getStaticProps: GetStaticProps = async () => {
-  const recipes = await allRecipes();
-  return { props: { recipes } };
-};

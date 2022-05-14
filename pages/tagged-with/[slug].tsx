@@ -45,5 +45,5 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug?.toString();
   const recipes = slug ? await getRecipesTaggedWith(slug) : [];
-  return { props: { recipes, slug } };
+  return { props: { recipes, slug }, revalidate: 10 };
 };

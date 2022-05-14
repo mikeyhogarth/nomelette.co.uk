@@ -94,7 +94,9 @@ export default function RecipePage({ tags }: Props) {
       </ul>
 
       <h1>Browse by tag</h1>
-      <TagList tags={tags.filter((t) => !SPECIAL_TAGS.includes(t))} />
+      <TagList
+        tags={tags.filter((t) => t?.length && !SPECIAL_TAGS.includes(t))}
+      />
     </div>
   );
 }

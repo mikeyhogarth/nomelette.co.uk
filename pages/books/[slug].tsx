@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = tags.map((slug) => ({
     params: { slug },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 // This function gets called at build time.

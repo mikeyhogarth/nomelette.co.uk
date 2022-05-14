@@ -89,7 +89,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: { slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 // This function gets called at build time.

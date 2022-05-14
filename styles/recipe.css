@@ -5,7 +5,7 @@
 
 .recipe dl dt,
 .recipe dl dd {
-  @apply h-10 p-2;
+  @apply p-2;
 }
 
 .recipe dl dt {

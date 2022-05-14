@@ -12,10 +12,10 @@ module.exports = {
         print: { raw: "print" },
       },
       colors: {
-        black: "#005556",
+        black: "#062b2b",
         offWhite: "#FDFDFD",
         primary: "#1ABDBC",
-        secondary: "#A93800",
+        secondary: "#bf3f00",
       },
       fontSize: {
         base: ["1.1em", { lineHeight: "1.8em" }],

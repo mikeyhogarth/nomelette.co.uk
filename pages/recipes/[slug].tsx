@@ -73,7 +73,7 @@ export default function RecipePage({ recipe }: Props) {
 
       <IngredientsBlock content={recipe.ingredients} />
       <MethodBlock content={recipe.method} />
-      {toPlainText(recipe.footnote).length > 0 && (
+      {recipe.footnote && toPlainText(recipe.footnote).length > 0 && (
         <Callout>
           <PortableText value={recipe.footnote} />
         </Callout>

@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { Recipe } from "../../types";
-import { FaClock, FaUserClock, FaUserFriends, FaLeaf } from "react-icons/fa";
+import { FaClock, FaUserClock, FaUserFriends } from "react-icons/fa";
 import Head from "next/head";
 import { allSlugs, getRecipe } from "../../services/sanity/contentServices";
 import IngredientsBlock from "../../components/IngredientsBlock";

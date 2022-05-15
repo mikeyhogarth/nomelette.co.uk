@@ -18,6 +18,14 @@ export default function RecipePage({ books }: Props) {
       </Head>
       <h1>Books</h1>
 
+      <p>
+        Most of the recipes within Sheila&apos;s archive come in the form of A4
+        handwritten sheets, however there are several &quot;compilations&quot;
+        that Sheila put together either for charity events or to share with
+        friends and family around the festive period. This page details some of
+        the features of these compilations and provides links to see the recipes
+        they contained.
+      </p>
       {books.map((book) => (
         <React.Fragment key={book.title}>
           <h2>{book.title}</h2>

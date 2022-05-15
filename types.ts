@@ -21,7 +21,7 @@ export interface Recipe {
   ingredients: string;
   method: string;
   footnote: BlockContent[];
-  book: any;
+  book: any; // TODO: Change this to a reference?
 }
 
 export interface Book {

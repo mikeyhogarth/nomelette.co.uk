@@ -49,7 +49,7 @@ export async function getAllTags(): Promise<string[]> {
 
   // flatten and de-dupe (TODO: look into whether you can do this in GROQ directly)
   const flattenedResult: string[] = Array.from(new Set(result.flat()));
-  return Promise.resolve(flattenedResult);
+  return Promise.resolve(flattenedResult.filter((t) => t && t.length));
 }
 
 // return recipes tagged with a specific tag

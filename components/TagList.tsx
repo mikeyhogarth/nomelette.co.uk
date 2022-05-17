@@ -8,7 +8,7 @@ interface Props {
 export default function TagList({ tags }: Props) {
   return (
     <ul className="tag-list">
-      {tags.map((tag, idx) => (
+      {(tags || []).map((tag, idx) => (
         <li key={idx}>
           <Link href={`/tagged-with/${tag}`}>
             <a

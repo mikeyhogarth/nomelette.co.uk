@@ -31,7 +31,7 @@ export default function RecipePage({ book }: Props) {
 // This function gets called at build time.
 export const getStaticPaths: GetStaticPaths = async () => {
   const tags = await allSlugs("book");
-  const paths = tags.map((slug) => ({
+  const paths = (tags || []).map((slug) => ({
     params: { slug },
   }));
   return { paths, fallback: "blocking" };

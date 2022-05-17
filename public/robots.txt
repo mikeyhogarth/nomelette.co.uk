@@ -1,6 +1,10 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /search/
+Disallow: /privacy/
+Disallow: /tagged-with/
+
 
 # Host
 Host: https://nomelette.co.uk/

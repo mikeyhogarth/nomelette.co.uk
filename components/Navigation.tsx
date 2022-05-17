@@ -17,6 +17,7 @@ export default function Navigation() {
         <NavLink href="/" text="Home" setOpen={setOpen} />
         <NavLink href="/about" text="About" setOpen={setOpen} />
         <NavLink href="/recipes" text="Browse" setOpen={setOpen} />
+        <NavLink href="/search" text="Search" setOpen={setOpen} />
         <NavLink href="/books" text="Books" setOpen={setOpen} />
       </ul>
     </nav>

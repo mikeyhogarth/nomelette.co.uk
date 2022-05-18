@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-gray-100 text-center p-10 mt-20 text-gray-700">
-      <div className="mb-3 text-center text-4xl text-gray-400">
+      <div className="social-icons mb-3 text-center text-4xl text-gray-400">
         <Link href={`https://www.facebook.com/Nomelette/`}>
           <a title="Facebook Community">
             <FaFacebookSquare className="inline m-1 hover:text-black" />
@@ -19,11 +19,11 @@ export default function Footer() {
       <strong>Nomelette</strong> {new Date().getFullYear()} :: Made with
       <FaHeart className="inline mx-1" />
       by Mikey and Laura.
-      <div>
-        <Link href="/privacy">
-          <a className="hover:underline">Privacy statement</a>
-        </Link>
-      </div>
+      <Link href="/privacy">
+        <a className="privacy-statement block hover:underline">
+          Privacy statement
+        </a>
+      </Link>
     </footer>
   );
 }

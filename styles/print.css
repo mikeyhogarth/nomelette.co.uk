@@ -1,0 +1,39 @@
+header,
+footer .social-icons,
+footer .privacy-statement,
+.main-recipe-image,
+.tag-list {
+  @apply print:hidden !important;
+}
+
+main h1 {
+  @apply print:border-none !important;
+}
+
+/* method block */
+ol.method-list {
+  @apply print:list-item !important;
+}
+ol.method-list li {
+  @apply print:m-0 print:ml-0 print:leading-none;
+}
+
+ol.method-list li:before {
+  @apply print:mr-0 print:text-black print:bg-transparent print:rounded-none print:text-left;
+}
+
+/* Headings */
+h1 {
+  @apply print:my-4 print:text-3xl !important;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  @apply print:my-4 print:text-base !important;
+}
+
+hr {
+  @apply print:hidden !important;
+}

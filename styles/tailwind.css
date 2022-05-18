@@ -14,4 +14,8 @@
     -webkit-appearance: none;
     border-radius: 0;
   }
+
+  input:focus-visible {
+    @apply outline-secondary;
+  }
 }

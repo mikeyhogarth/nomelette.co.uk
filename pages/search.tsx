@@ -51,7 +51,7 @@ const Search = () => {
       </form>
 
       {searchCount > 0 && <hr className="my-10" />}
-      {loading && <FaSpinner className="text-3xl spin" />}
+      {loading && <FaSpinner className="text-3xl animate-spin" />}
       {results.length === 0 && !loading && searchCount > 0 && (
         <p>
           No results for the search term &quot;

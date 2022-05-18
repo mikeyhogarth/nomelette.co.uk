@@ -28,26 +28,26 @@ const Search = () => {
   return (
     <>
       <h2>Search</h2>
-
+      <p>Enter search terms into the field below.</p>
       <form onSubmit={handleSubmit}>
-        <label className="block" htmlFor="searchterm">
-          Enter search term...
-        </label>
         <input
           id="searchterm"
           name="searchterm"
+          aria-label="Search"
           onChange={(event) => setSearchTerm(event.target.value)}
-          className="p-2 w-60 md:w-72 border border-primary  h-12"
+          className="p-2 w-8/12 md:w-72 border border-primary  h-12"
           type="search"
           autoComplete="off"
           required={true}
           minLength={3}
+          placeholder="Name or ingredients..."
         />
-        <input
-          type="Submit"
-          value="Search"
-          className="bg-primary text-white px-4 cursor-pointer h-12"
-        />
+        <button
+          type="submit"
+          className="bg-primary text-white px-4 h-12 w-4/12 md:w-20 hover:brightness-110"
+        >
+          Search
+        </button>
       </form>
 
       {searchCount > 0 && <hr className="my-10" />}

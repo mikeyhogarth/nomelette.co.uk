@@ -9,12 +9,6 @@ import { FaCookieBite, FaCheese, FaHamburger } from "react-icons/fa";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Nomelette</title>
-        <meta name="description" content="Recipes of Shiela Hogarth" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <div className="text-center mt-10">
         <Image
           className="rounded-full"

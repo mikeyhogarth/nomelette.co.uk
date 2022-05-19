@@ -9,7 +9,7 @@ export default function TagList({ tags }: Props) {
   return (
     <ul className="tag-list">
       {(tags || []).map((tag, idx) => (
-        <li key={idx}>
+        <li key={idx} property="recipeCategory">
           <Link href={`/tagged-with/${tag}`}>
             <a
               className={`${

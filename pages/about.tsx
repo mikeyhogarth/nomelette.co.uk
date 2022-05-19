@@ -1,6 +1,11 @@
+import Head from "next/head";
+
 export default function About() {
   return (
     <>
+      <Head>
+        <title>About | Nomelette</title>
+      </Head>
       <h1>About</h1>
       <h2>What is Nomelette?</h2>
       <p>

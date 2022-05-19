@@ -14,7 +14,7 @@ export default function MethodBlock({ content }: Props) {
       <h2>Method</h2>
       <ol className="method-list">
         {methodList.map((line, idx) => (
-          <li className="flex" key={idx}>
+          <li className="flex" key={idx} property="recipeInstructions">
             {line}
           </li>
         ))}

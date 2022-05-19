@@ -5,19 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="author" content="Mikey" />
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="Nomelette" />
-          <meta
-            property="og:image"
-            content="/media/icons/android-chrome-192x192.png"
-          />
-          <meta name="twitter:creator" content="@MetalMikey666" />
-          <meta
-            name="twitter:image"
-            content="/media/icons/android-chrome-192x192.png"
-          />
-
           {/* PWA settings and icons */}
           <meta name="theme-color" content="#00d2d1" />
           <link rel="icon" href="/favicon.ico" />
@@ -52,6 +39,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
+
         <body>
           <Main />
           <NextScript />

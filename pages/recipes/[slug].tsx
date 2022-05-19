@@ -18,16 +18,36 @@ interface Props {
 
 export default function RecipePage({ recipe }: Props) {
   return (
-    <article className="recipe">
+    <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
       <Head>
         <title>{recipe.name} | Nomelette</title>
+        {recipe.image && (
+          <>
+            <meta
+              key="ogImage"
+              property="og:image"
+              content={urlForImage(recipe.image).url()}
+            />
+            <meta
+              key="twitterImage"
+              name="twitter:image"
+              content={urlForImage(recipe.image).url()}
+            />
+          </>
+        )}
+        <meta
+          key="ogDescription"
+          property="og:description"
+          content={`Recipe for ${recipe.name} by Sheila Hogarth`}
+        />
       </Head>
-      <h1>{recipe.name}</h1>
+      <h1 property="name">{recipe.name}</h1>
       {recipe.image && (
         <figure className="main-recipe-image">
           <Image
             src={urlForImage(recipe.image).width(500).height(500).url()}
             alt={`Picture of ${recipe.name}`}
+            property="image"
             width={500}
             height={500}
           />
@@ -39,9 +59,11 @@ export default function RecipePage({ recipe }: Props) {
 
       <TagList tags={recipe.tags} />
 
-      {recipe.description && toPlainText(recipe.description).length > 0 && (
-        <PortableText value={recipe.description} />
-      )}
+      <div property="description">
+        {recipe.description && toPlainText(recipe.description).length > 0 && (
+          <PortableText value={recipe.description} />
+        )}
+      </div>
       <dl className="mt-6">
         {recipe.preparation_time && (
           <>
@@ -49,7 +71,7 @@ export default function RecipePage({ recipe }: Props) {
               <FaUserClock className="inline-block mr-1" />
               Preparation
             </dt>
-            <dd>{recipe.preparation_time}</dd>
+            <dd property="prepTime">{recipe.preparation_time}</dd>
           </>
         )}
         {recipe.cooking_time && (
@@ -57,7 +79,7 @@ export default function RecipePage({ recipe }: Props) {
             <dt>
               <FaClock className="inline-block mr-1" /> Cooking
             </dt>
-            <dd>{recipe.cooking_time}</dd>
+            <dd property="cookTime">{recipe.cooking_time}</dd>
           </>
         )}
         {recipe.serves && (
@@ -66,7 +88,7 @@ export default function RecipePage({ recipe }: Props) {
               <FaUserFriends className="inline-block mr-1" />
               Serves
             </dt>
-            <dd>{recipe.serves}</dd>
+            <dd property="recipeYield">{recipe.serves}</dd>
           </>
         )}
       </dl>

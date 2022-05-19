@@ -1,8 +1,11 @@
 import React from "react";
-
+import Head from "next/head";
 export default function Privacy() {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Privacy | Nomelette</title>
+      </Head>
       <h2>tl;dr</h2>
       <p>
         We don&apos;t track you, we don&apos;t want to track you, we do not have
@@ -48,6 +51,6 @@ export default function Privacy() {
         strictly necessary / essential to ensure this site maintains a low
         carbon footprint.
       </p>
-    </div>
+    </>
   );
 }

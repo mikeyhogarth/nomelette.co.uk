@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { FaSpinner } from "react-icons/fa";
 import Link from "next/link";
 import Head from "next/head";
@@ -7,13 +7,28 @@ import { Recipe } from "../types";
 
 // artificial limit to prevent spamming
 const MAX_SEARCH_LIMIT = 50;
+const SEARCH_TERM_LOCAL_STORAGE_KEY = "searchTerm";
+const SEARCH_RESULTS_LOCAL_STORAGE_KEY = "searchResults";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [lastSearchTerm, setLastSearchTerm] = useState<string>("");
   const [results, setResults] = useState<Recipe[]>([]);
-  const [searchCount, setSearchCount] = useState<number>(0);
+  const [searchCount, setSearchCount] = useState<number>(results.length);
   const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const cachedSearchTerm =
+      localStorage.getItem(SEARCH_TERM_LOCAL_STORAGE_KEY) || "";
+
+    const cachedSearchResults = JSON.parse(
+      localStorage.getItem(SEARCH_RESULTS_LOCAL_STORAGE_KEY) || "[]"
+    );
+
+    setSearchTerm(cachedSearchTerm);
+    setLastSearchTerm(cachedSearchTerm);
+    setResults(cachedSearchResults);
+  }, []);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -22,8 +37,17 @@ const Search = () => {
     setSearchCount(searchCount + 1);
     setLastSearchTerm(searchTerm);
     setLoading(true);
-    setResults(await search(searchTerm));
+    const searchResults = await search(searchTerm);
+    setResults(searchResults);
     setLoading(false);
+
+    // Set results on local storage so that they remain when back pressed / user
+    // comes back to search page.
+    localStorage.setItem(SEARCH_TERM_LOCAL_STORAGE_KEY, searchTerm);
+    localStorage.setItem(
+      SEARCH_RESULTS_LOCAL_STORAGE_KEY,
+      JSON.stringify(searchResults)
+    );
   }
 
   return (

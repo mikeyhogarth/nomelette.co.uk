@@ -18,7 +18,7 @@ interface Props {
 
 export default function RecipePage({ recipe }: Props) {
   return (
-    <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
+    <>
       <Head>
         <title>{recipe.name} | Nomelette</title>
         {recipe.image && (
@@ -41,66 +41,68 @@ export default function RecipePage({ recipe }: Props) {
           content={`Recipe for ${recipe.name} by Sheila Hogarth`}
         />
       </Head>
-      <h1 property="name">{recipe.name}</h1>
-      {recipe.image && (
-        <figure className="main-recipe-image">
-          <Image
-            src={urlForImage(recipe.image).width(500).height(500).url()}
-            alt={`Picture of ${recipe.name}`}
-            property="image"
-            width={500}
-            height={500}
-          />
-          <figcaption className="w-full text-center block italic">
-            {recipe.name}
-          </figcaption>
-        </figure>
-      )}
+      <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
+        <h1 property="name">{recipe.name}</h1>
+        {recipe.image && (
+          <figure className="main-recipe-image">
+            <Image
+              src={urlForImage(recipe.image).width(500).height(500).url()}
+              alt={`Picture of ${recipe.name}`}
+              property="image"
+              width={500}
+              height={500}
+            />
+            <figcaption className="w-full text-center block italic">
+              {recipe.name}
+            </figcaption>
+          </figure>
+        )}
 
-      <TagList tags={recipe.tags} />
+        <TagList tags={recipe.tags} />
 
-      <div property="description">
-        {recipe.description && toPlainText(recipe.description).length > 0 && (
-          <PortableText value={recipe.description} />
-        )}
-      </div>
-      <dl className="mt-6">
-        {recipe.preparation_time && (
-          <>
-            <dt>
-              <FaUserClock className="inline-block mr-1" />
-              Preparation
-            </dt>
-            <dd property="prepTime">{recipe.preparation_time}</dd>
-          </>
-        )}
-        {recipe.cooking_time && (
-          <>
-            <dt>
-              <FaClock className="inline-block mr-1" /> Cooking
-            </dt>
-            <dd property="cookTime">{recipe.cooking_time}</dd>
-          </>
-        )}
-        {recipe.serves && (
-          <>
-            <dt>
-              <FaUserFriends className="inline-block mr-1" />
-              Serves
-            </dt>
-            <dd property="recipeYield">{recipe.serves}</dd>
-          </>
-        )}
-      </dl>
+        <div property="description">
+          {recipe.description && toPlainText(recipe.description).length > 0 && (
+            <PortableText value={recipe.description} />
+          )}
+        </div>
+        <dl className="mt-6">
+          {recipe.preparation_time && (
+            <>
+              <dt>
+                <FaUserClock className="inline-block mr-1" />
+                Preparation
+              </dt>
+              <dd property="prepTime">{recipe.preparation_time}</dd>
+            </>
+          )}
+          {recipe.cooking_time && (
+            <>
+              <dt>
+                <FaClock className="inline-block mr-1" /> Cooking
+              </dt>
+              <dd property="cookTime">{recipe.cooking_time}</dd>
+            </>
+          )}
+          {recipe.serves && (
+            <>
+              <dt>
+                <FaUserFriends className="inline-block mr-1" />
+                Serves
+              </dt>
+              <dd property="recipeYield">{recipe.serves}</dd>
+            </>
+          )}
+        </dl>
 
-      <IngredientsBlock content={recipe.ingredients} />
-      <MethodBlock content={recipe.method} />
-      {recipe.footnote && toPlainText(recipe.footnote).length > 0 && (
-        <Callout>
-          <PortableText value={recipe.footnote} />
-        </Callout>
-      )}
-    </article>
+        <IngredientsBlock content={recipe.ingredients} />
+        <MethodBlock content={recipe.method} />
+        {recipe.footnote && toPlainText(recipe.footnote).length > 0 && (
+          <Callout>
+            <PortableText value={recipe.footnote} />
+          </Callout>
+        )}
+      </article>
+    </>
   );
 }
 

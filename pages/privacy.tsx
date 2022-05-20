@@ -6,26 +6,34 @@ export default function Privacy() {
       <Head>
         <title>Privacy | Nomelette</title>
       </Head>
-      <h2>tl;dr</h2>
+      <h2>In a nutshell...</h2>
       <p>
-        We don&apos;t track you, we don&apos;t want to track you, we do not have
-        any interest in who you are or why you are here - but we are going to
-        give you some cookie-like things and these are explained below. If you
-        do not like this, please leave the site immediately.
+        We don&apos;t track you, we don&apos;t want to track you. We would love
+        to know how you are using this site because we spent a lot of time
+        putting it together and we are interested in how many people are
+        visiting and what content they are finding the most engaging, however
+        the law as it currently stands would require us to inconvenience our
+        users with a popup if we wanted to do that, and we do not want to be
+        part of that problem.
+      </p>
+      <p>
+        We are going to give you some cookie-like things to help the site run
+        faster, these are explained below. If you do not approve of this, please
+        leave the site immediately.
       </p>
       <h2>Soapbox</h2>
       <p>
         The creators of this site are opposed to GDPR in its current form. We
-        feel that the law is currently over the top and the implementers do not
-        understand the damage they are causing to innovation. This site was made
-        far less possible by their ridiculous rulings and legistlation, despite
-        the fact that nobody involved in the site has any interest in invading
-        or infringing upon anyone&apos;s privacy.
+        feel that the law is currently confusing and over the top, and that the
+        implementers do not understand the technology involved or the damage
+        they are doing to innovation by restricting it in the way they have.
+        This site was made far less possible by their careless rulings and
+        legistlation.
       </p>
       <p>
         That said, we don&apos;t want to get into any trouble about this
         completely harmless website so we are forced legally to provide the
-        following pointless blurb to you.
+        following statements to you.
       </p>
       <h2>Privacy</h2>
       <p>
@@ -35,21 +43,33 @@ export default function Privacy() {
         includes anonymous analytics that would otherwise help us to improve the
         site.
       </p>
-      <h2>Cookies</h2>
+      <h2>Cookies and Cookie-like items</h2>
       <p>
-        We do not set any cookies on your device, however there are two
+        We do not set any cookies on your device, however there are some
         &quot;cookie-like&quot; items that may be set on your device when you
-        visit this application; Cache Storage - Caches data the user has already
-        downloaded/read. Service Worker - Allows the user to install the app
-        locally if they want to (will only be installed if the user asks it to
-        be). Both of these exist purely to prevent the user having to
-        re-download data they&apos;ve already downloaded and to make the site
-        load faster. We believe this usage falls under the ICO&apos;s exemptions
-        in that they are being set purely for the purpose of carrying out
-        communication over a network (or in this case, NOT needlessly carrying
-        out that communication). We also believe these cookie-like items to be
-        strictly necessary / essential to ensure this site maintains a low
-        carbon footprint.
+        visit and use this application;
+      </p>
+      <dl className="pb-4">
+        <dt className="font-bold pt-4">Local and Session Storage</dt>{" "}
+        <dd>
+          These are used for caching data that the user has already
+          downloaded/read.
+        </dd>
+        <dt className="font-bold pt-4">Service Worker</dt>
+        <dd>
+          Allows the user to install the app locally if they want to (will only
+          be installed if the user asks it to be).{" "}
+        </dd>
+      </dl>
+      <p>
+        These exist purely to prevent the user having to re-download data
+        they&apos;ve already downloaded, provide a better user experience and to
+        make the site load faster. We believe this usage falls under the
+        ICO&apos;s exemptions in that they are being set purely for the purpose
+        of carrying out communication over a network (or in this case, NOT
+        needlessly carrying out that communication). We also believe these
+        cookie-like items to be strictly necessary / essential to ensure this
+        site maintains a low carbon footprint.
       </p>
     </>
   );

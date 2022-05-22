@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import Link from "next/link";
 import { Recipe } from "../../types";
 import Head from "next/head";
+import RecipeList from "../../components/RecipeList";
 import {
   getRecipesTaggedWith,
   getAllTags,
@@ -19,15 +19,7 @@ export default function RecipePage({ recipes, slug }: Props) {
         <title>{slug} | Nomelette</title>
       </Head>
       <h1>{slug}</h1>
-      <ul>
-        {recipes.map((r) => (
-          <li key={r.name}>
-            <Link href={`/recipes/${r.slug.current}`}>
-              <a>{r.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <RecipeList recipes={recipes} />
     </div>
   );
 }

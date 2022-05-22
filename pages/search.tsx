@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent } from "react";
 import { FaSpinner } from "react-icons/fa";
 import Link from "next/link";
 import Head from "next/head";
+import RecipeList from "../components/RecipeList";
 import { search } from "../services/sanity/contentServices";
 import { Recipe } from "../types";
 
@@ -89,20 +90,12 @@ const Search = () => {
       )}
 
       {results.length > 0 && (
-        <p>
-          Showing {results.length} results for the search term &quot;
-          {lastSearchTerm}&quot;.
+        <p className="pt-4">
+          Showing {results.length} results for the search term{" "}
+          <span className="font-bold">{lastSearchTerm}</span>.
         </p>
       )}
-      <ul>
-        {results.map((r, idx) => (
-          <li key={idx}>
-            <Link href={`/recipes/${r.slug.current}`}>
-              <a>{r.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <RecipeList recipes={results} />
     </>
   );
 };

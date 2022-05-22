@@ -11,7 +11,7 @@ import autumnImage from "../../public/media/images/autumn.jpg";
 import winterImage from "../../public/media/images/winter.jpg";
 import startersImage from "../../public/media/images/starters.jpg";
 import mainsImage from "../../public/media/images/mains.jpg";
-import puddingsImage from "../../public/media/images/puddings.jpg";
+import dessertsImage from "../../public/media/images/desserts.jpg";
 /* 
   Some tags are called out specifically and don't need to be in the main tag list.
 */
@@ -23,7 +23,7 @@ const SPECIAL_TAGS = [
   "winter",
   "starters",
   "main-courses",
-  "puddings",
+  "desserts",
 ];
 
 interface Props {
@@ -86,9 +86,9 @@ export default function RecipePage({ tags }: Props) {
         </li>
         <li>
           <TagImage
-            image={puddingsImage}
-            text="Puddings"
-            url="/tagged-with/puddings"
+            image={dessertsImage}
+            text="Desserts"
+            url="/tagged-with/desserts"
           />
         </li>
       </ul>

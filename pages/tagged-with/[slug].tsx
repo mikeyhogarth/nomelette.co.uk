@@ -16,9 +16,9 @@ export default function RecipePage({ recipes, slug }: Props) {
   return (
     <div>
       <Head>
-        <title>Recipes tagged with {slug} | Nomelette</title>
+        <title>{slug} | Nomelette</title>
       </Head>
-      <h1>Recipes tagged with &quot;{slug}&quot;</h1>
+      <h1>{slug}</h1>
       <ul>
         {recipes.map((r) => (
           <li key={r.name}>

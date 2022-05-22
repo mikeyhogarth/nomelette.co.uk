@@ -29,6 +29,7 @@ const Search = () => {
     setSearchTerm(cachedSearchTerm);
     setLastSearchTerm(cachedSearchTerm);
     setResults(cachedSearchResults);
+    setSearchCount(cachedSearchResults.length);
   }, []);
 
   async function handleSubmit(event: FormEvent) {
@@ -80,21 +81,21 @@ const Search = () => {
         </button>
       </form>
 
-      {searchCount > 0 && <hr className="my-10" />}
+      {results.length > 0 && (
+        <p className="pt-4">
+          Showing {results.length} result{results.length > 1 ? "s" : ""} for the
+          search term <span className="font-bold">{lastSearchTerm}</span>.
+        </p>
+      )}
+
       {loading && <FaSpinner className="text-3xl animate-spin" />}
       {results.length === 0 && !loading && searchCount > 0 && (
-        <p>
+        <p className="pt-4">
           No results for the search term &quot;
           {lastSearchTerm}&quot;.
         </p>
       )}
 
-      {results.length > 0 && (
-        <p className="pt-4">
-          Showing {results.length} results for the search term{" "}
-          <span className="font-bold">{lastSearchTerm}</span>.
-        </p>
-      )}
       <RecipeList recipes={results} />
     </>
   );

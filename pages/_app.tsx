@@ -1,13 +1,14 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Head from "next/head";
 
-//const marginClasses = "px-5 mb-20 lg:px-20 xl:px-40 pt-6 md:pt-16";
-
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -17,7 +18,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           content="Old school family recipes from the heart of Cumbria by Sheila Hogarth"
         />
         <link rel="icon" href="/favicon.ico" />
-
+        <link
+          rel="canonical"
+          href={
+            `https://nomelette.co.uk${
+              router.asPath === "/" ? "" : router.asPath
+            }`.split("?")[0]
+          }
+        />
         <meta name="author" content="Mikey" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Nomelette" />

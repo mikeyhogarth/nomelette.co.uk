@@ -119,5 +119,5 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // This function gets called at build time.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const recipe = await getRecipe(params?.slug?.toString() || "");
-  return { props: { recipe }, revalidate: 10 };
+  return { props: { recipe }, notFound: !recipe, revalidate: 10 };
 };

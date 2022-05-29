@@ -19,7 +19,12 @@ export default function RecipePage({ recipes, slug }: Props) {
         <title>{slug} | Nomelette</title>
       </Head>
       <h1>{slug}</h1>
-      <RecipeList recipes={recipes} />
+      {!!recipes.length && <RecipeList recipes={recipes} />}
+      {!recipes.length && (
+        <p>
+          Very sorry - there are no recipes tagged with <strong>{slug}</strong>
+        </p>
+      )}
     </div>
   );
 }

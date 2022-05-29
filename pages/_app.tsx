@@ -18,14 +18,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           content="Old school family recipes from the heart of Cumbria by Sheila Hogarth"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="canonical"
-          href={
-            `https://nomelette.co.uk${
-              router.asPath === "/" ? "" : router.asPath
-            }`.split("?")[0]
-          }
-        />
+
+        {!(pageProps.statusCode === 404) && (
+          <link
+            rel="canonical"
+            href={
+              `https://nomelette.co.uk${
+                router.asPath === "/" ? "" : router.asPath
+              }`.split("?")[0]
+            }
+          />
+        )}
         <meta name="author" content="Mikey" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Nomelette" />

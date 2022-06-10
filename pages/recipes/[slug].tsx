@@ -65,34 +65,36 @@ export default function RecipePage({ recipe }: Props) {
             <PortableText value={recipe.description} />
           )}
         </div>
-        <dl className="mt-6">
-          {recipe.preparation_time && (
-            <>
-              <dt>
-                <FaUserClock className="inline-block mr-1" />
-                Preparation
-              </dt>
-              <dd property="prepTime">{recipe.preparation_time}</dd>
-            </>
-          )}
-          {recipe.cooking_time && (
-            <>
-              <dt>
-                <FaClock className="inline-block mr-1" /> Cooking
-              </dt>
-              <dd property="cookTime">{recipe.cooking_time}</dd>
-            </>
-          )}
-          {recipe.serves && (
-            <>
-              <dt>
-                <FaUserFriends className="inline-block mr-1" />
-                Serves
-              </dt>
-              <dd property="recipeYield">{recipe.serves}</dd>
-            </>
-          )}
-        </dl>
+        {(recipe.preparation_time || recipe.cooking_time || recipe.serves) && (
+          <dl className="mt-6">
+            {recipe.preparation_time && (
+              <>
+                <dt>
+                  <FaUserClock className="inline-block mr-1" />
+                  Preparation
+                </dt>
+                <dd property="prepTime">{recipe.preparation_time}</dd>
+              </>
+            )}
+            {recipe.cooking_time && (
+              <>
+                <dt>
+                  <FaClock className="inline-block mr-1" /> Cooking
+                </dt>
+                <dd property="cookTime">{recipe.cooking_time}</dd>
+              </>
+            )}
+            {recipe.serves && (
+              <>
+                <dt>
+                  <FaUserFriends className="inline-block mr-1" />
+                  Serves
+                </dt>
+                <dd property="recipeYield">{recipe.serves}</dd>
+              </>
+            )}
+          </dl>
+        )}
 
         <IngredientsBlock content={recipe.ingredients} />
         <MethodBlock content={recipe.method} />

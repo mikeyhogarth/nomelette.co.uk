@@ -7,6 +7,7 @@ export default {
       name: "name",
       title: "Name",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
@@ -16,6 +17,7 @@ export default {
         source: "name",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "serves",
@@ -49,6 +51,17 @@ export default {
       options: {
         layout: "tags",
       },
+      validation: (Rule) =>
+        Rule.required().custom((tags) => {
+          const upperCaseTags = tags.reduce(
+            (acc, tag) => acc + (tag.toLowerCase() !== tag ? 1 : 0),
+            0
+          );
+
+          return upperCaseTags === 0
+            ? true
+            : `${upperCaseTags} tag(s) contain upper case characters. Tags should all be lower case.`;
+        }),
     },
     {
       name: "description",
@@ -59,11 +72,13 @@ export default {
       name: "ingredients",
       title: "Ingredients",
       type: "text",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "method",
       title: "Method",
       type: "text",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "footnote",

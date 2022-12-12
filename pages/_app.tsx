@@ -51,9 +51,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <header className="sticky top-0 z-50 px-10 bg-primary text-white print:hidden flex flex-row py-2 md:py-5">
         <h1 className="font-brand text-3xl drop-shadow-lg inline-block my-0 py-0">
-          <Link href={`/`}>
-            <a>Nomelette</a>
-          </Link>
+          <Link href={`/`}>Nomelette</Link>
         </h1>
 
         <Navigation />

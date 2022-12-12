@@ -15,24 +15,26 @@ const RecipeList = ({ recipes }: Props) => {
         <li key={r.name} className="mx-0 py-4 border-b leading-none">
           {r.image && (
             <div className="float-right leading-none m-4 mr-0 mt-0">
-              <Link href={`/recipes/${r.slug.current}`}>
-                <a className="text-2xl text-secondary font-bold no-underline">
-                  <Image
-                    src={urlForImage(r.image).width(500).height(500).url()}
-                    alt={`Picture of ${r.name}`}
-                    property="image"
-                    width={150}
-                    height={150}
-                    loading="lazy"
-                  />
-                </a>
+              <Link
+                href={`/recipes/${r.slug.current}`}
+                className="text-2xl text-secondary font-bold no-underline"
+              >
+                <Image
+                  src={urlForImage(r.image).width(500).height(500).url()}
+                  alt={`Picture of ${r.name}`}
+                  property="image"
+                  width={150}
+                  height={150}
+                  loading="lazy"
+                />
               </Link>
             </div>
           )}
-          <Link href={`/recipes/${r.slug.current}`}>
-            <a className="text-2xl text-secondary font-bold no-underline">
-              {r.name}
-            </a>
+          <Link
+            href={`/recipes/${r.slug.current}`}
+            className="text-2xl text-secondary font-bold no-underline"
+          >
+            {r.name}
           </Link>
           {(r.cooking_time || r.preparation_time) && (
             <p className="italic text-gray-400 leading-normal py-2">

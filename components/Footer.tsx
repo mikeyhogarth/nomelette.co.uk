@@ -5,24 +5,24 @@ export default function Footer() {
   return (
     <footer className="w-full bg-gray-100 text-center p-10 mt-20 text-gray-700">
       <div className="social-icons mb-3 text-center text-4xl text-gray-400">
-        <Link href={`https://www.facebook.com/Nomelette/`}>
-          <a title="Facebook Community">
-            <FaFacebookSquare className="inline m-1 hover:text-black" />
-          </a>
+        <Link
+          title="Facebook Community"
+          href={`https://www.facebook.com/Nomelette/`}
+        >
+          <FaFacebookSquare className="inline m-1 hover:text-black" />
         </Link>
-        <Link href="https://github.com/mikeyhogarth/nomelette.co.uk">
-          <a title="Source Code">
-            <FaGithubSquare className="inline m-1 hover:text-black" />
-          </a>
+        <Link
+          title="Source Code"
+          href="https://github.com/mikeyhogarth/nomelette.co.uk"
+        >
+          <FaGithubSquare className="inline m-1 hover:text-black" />
         </Link>
       </div>
       <strong>Nomelette</strong> {new Date().getFullYear()} :: Made with
       <FaHeart className="inline mx-1" />
       by Mikey and Laura.
-      <Link href="/privacy">
-        <a className="privacy-statement block hover:underline">
-          Privacy statement
-        </a>
+      <Link href="/privacy" className="privacy-statement block hover:underline">
+        Privacy statement
       </Link>
     </footer>
   );

@@ -33,10 +33,12 @@ interface NavLinkProps {
 function NavLink({ href, text, setOpen }: NavLinkProps) {
   return (
     <li className="md:inline-block">
-      <Link href={href}>
-        <a className="hover:underline" onClick={() => setOpen(false)}>
-          {text}
-        </a>
+      <Link
+        href={href}
+        className="hover:underline"
+        onClick={() => setOpen(false)}
+      >
+        {text}
       </Link>
     </li>
   );

@@ -9,32 +9,32 @@ import { FaCookieBite, FaCheese, FaHamburger } from "react-icons/fa";
 export default function Home() {
   return (
     <>
-      <div className="text-center mt-10">
+      <div className="flex justify-evenly mt-10">
         <Image
           className="rounded-full"
+          style={{ height: "300px" }}
           src={homepageImage1}
           alt="Image representing home cooking"
           width={300}
           height={300}
         />
-        <div className="hidden md:inline-block mx-10">
-          <Image
-            className="rounded-full hidden md:inline-block"
-            src={homepageImage2}
-            alt="Image representing home cooking"
-            width={300}
-            height={300}
-          />
-        </div>
-        <div className="hidden xl:inline-block">
-          <Image
-            className="rounded-full"
-            src={homepageImage3}
-            alt="Image representing home cooking"
-            width={300}
-            height={300}
-          />
-        </div>
+
+        <Image
+          className="rounded-full hidden md:inline"
+          style={{ height: "300px" }}
+          src={homepageImage2}
+          alt="Image representing home cooking"
+          width={300}
+          height={300}
+        />
+        <Image
+          className="rounded-full hidden xl:inline"
+          style={{ height: "300px" }}
+          src={homepageImage3}
+          alt="Image representing home cooking"
+          width={300}
+          height={300}
+        />
       </div>
       <div className="text-center">
         <h2 className="font-brand text-primary lowercase tracking-tight text-6xl ">
@@ -51,11 +51,11 @@ export default function Home() {
         </p>
 
         <div className="mb-14">
-          <Link href="/recipes">
-            <a className="btn m-2">Browse Recipes</a>
+          <Link href="/recipes" className="btn m-2">
+            Browse Recipes
           </Link>
-          <Link href="/about">
-            <a className="btn btn-secondary m-2">What is Nomelette?</a>
+          <Link href="/about" className="btn btn-secondary m-2">
+            What is Nomelette?
           </Link>
         </div>
         <FaCookieBite className="inline-block text-primary text-4xl" />

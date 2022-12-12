@@ -31,7 +31,7 @@ export default function RecipePage({ books }: Props) {
           <h2>{book.title}</h2>
           <PortableText value={book.description} />
           <Link href={`/books/${book.slug.current}`}>
-            <a>Browse recipes from {book.title}</a>
+            Browse recipes from {book.title}
           </Link>
         </React.Fragment>
       ))}

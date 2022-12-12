@@ -18,9 +18,7 @@ export default function RecipePage({ book }: Props) {
       <ul>
         {book.recipes.map((r) => (
           <li key={r.name}>
-            <Link href={`/recipes/${r.slug.current}`}>
-              <a>{r.name}</a>
-            </Link>
+            <Link href={`/recipes/${r.slug.current}`}>{r.name}</Link>
           </li>
         ))}
       </ul>

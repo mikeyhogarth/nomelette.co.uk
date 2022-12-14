@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-
 import { Recipe } from "../../types";
+import Metadata from "../../components/Metadata";
 import { FaClock, FaUserClock, FaUserFriends } from "react-icons/fa";
 import Head from "next/head";
 import { allSlugs, getRecipe } from "../../services/sanity/contentServices";
@@ -19,8 +19,9 @@ interface Props {
 export default function RecipePage({ recipe }: Props) {
   return (
     <>
+      <Metadata title={recipe.name} />
+
       <Head>
-        <title>{recipe.name} | Nomelette</title>
         {recipe.image && (
           <>
             <meta

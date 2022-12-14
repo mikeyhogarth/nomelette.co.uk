@@ -2,9 +2,9 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { Book } from "../../types";
-import Head from "next/head";
 import { allBooks } from "../../services/sanity/contentServices";
 import React from "react";
+import Metadata from "../../components/Metadata";
 
 interface Props {
   books: Book[];
@@ -13,9 +13,8 @@ interface Props {
 export default function RecipePage({ books }: Props) {
   return (
     <div>
-      <Head>
-        <title>Books | Nomelette</title>
-      </Head>
+      <Metadata title="Books" />
+
       <h1>Books</h1>
 
       <p>

@@ -1,14 +1,16 @@
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import homepageImage1 from "../public/media/images/homepage1.jpg";
 import homepageImage2 from "../public/media/images/homepage2.jpg";
 import homepageImage3 from "../public/media/images/homepage3.jpg";
+import Metadata from "../components/Metadata";
 import { FaCookieBite, FaCheese, FaHamburger } from "react-icons/fa";
 
 export default function Home() {
   return (
     <>
+      <Metadata title="The recipes of Sheila Hogarth" />
+
       <div className="flex justify-evenly mt-10">
         <Image
           className="rounded-full"

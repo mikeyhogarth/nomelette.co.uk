@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
 import { Book } from "../../types";
-import Head from "next/head";
+import Metadata from "../../components/Metadata";
 import { getBook, allSlugs } from "../../services/sanity/contentServices";
 
 interface Props {
@@ -11,9 +11,7 @@ interface Props {
 export default function RecipePage({ book }: Props) {
   return (
     <div>
-      <Head>
-        <title>Recipes from the book {book.title} | Nomelette</title>
-      </Head>
+      <Metadata title={`Recipes from the book ${book.title}`} />
       <h1>Recipes from the book &quot;{book.title}&quot;</h1>
       <ul>
         {book.recipes.map((r) => (

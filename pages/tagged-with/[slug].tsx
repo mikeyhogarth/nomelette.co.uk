@@ -6,6 +6,7 @@ import {
   getRecipesTaggedWith,
   getAllTags,
 } from "../../services/sanity/contentServices";
+import Metadata from "../../components/Metadata";
 
 interface Props {
   slug: string;
@@ -15,9 +16,8 @@ interface Props {
 export default function RecipePage({ recipes, slug }: Props) {
   return (
     <div>
-      <Head>
-        <title>{slug} | Nomelette</title>
-      </Head>
+      <Metadata title={`Recipes tagged with ${slug}`} />
+
       <h1>{slug}</h1>
       {!!recipes.length && <RecipeList recipes={recipes} />}
       {!recipes.length && (

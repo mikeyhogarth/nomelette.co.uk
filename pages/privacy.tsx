@@ -1,11 +1,10 @@
-import React from "react";
-import Head from "next/head";
+import Metadata from "../components/Metadata";
+
 export default function Privacy() {
   return (
     <>
-      <Head>
-        <title>Privacy | Nomelette</title>
-      </Head>
+      <Metadata title="Privacy" />
+
       <h2>In a nutshell...</h2>
       <p>
         We don&apos;t track you, we don&apos;t want to track you. We would love

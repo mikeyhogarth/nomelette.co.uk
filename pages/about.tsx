@@ -1,11 +1,10 @@
-import Head from "next/head";
+import Metadata from "../components/Metadata";
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About | Nomelette</title>
-      </Head>
+      <Metadata title="About" />
+
       <h1>About</h1>
       <h2>What is Nomelette?</h2>
       <p>

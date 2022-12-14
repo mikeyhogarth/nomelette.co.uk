@@ -1,7 +1,6 @@
 import { useState, useEffect, FormEvent } from "react";
 import { FaSpinner } from "react-icons/fa";
-import Link from "next/link";
-import Head from "next/head";
+import Metadata from "../components/Metadata";
 import RecipeList from "../components/RecipeList";
 import { search } from "../services/sanity/contentServices";
 import { Recipe } from "../types";
@@ -54,9 +53,7 @@ const Search = () => {
 
   return (
     <>
-      <Head>
-        <title>Search | Nomelette</title>
-      </Head>
+      <Metadata title="Search" />
 
       <h2>Search</h2>
       <p>Enter search terms into the field below.</p>

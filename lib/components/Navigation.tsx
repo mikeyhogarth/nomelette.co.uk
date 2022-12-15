@@ -1,5 +1,5 @@
+import { FaTimes as FaClose, FaBars as FaHamburgerMenu } from "react-icons/fa";
 import Link from "@/components/Link";
-import { FaBars as FaHamburgerMenu, FaTimes as FaClose } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Navigation() {

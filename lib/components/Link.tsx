@@ -1,4 +1,4 @@
-import { default as NextLink, type LinkProps } from "next/link";
+import { type LinkProps, default as NextLink } from "next/link";
 import { type HtmlHTMLAttributes } from "react";
 
 const Link = ({

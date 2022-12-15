@@ -1,16 +1,16 @@
-import { GetStaticProps, GetStaticPaths } from "next";
-import { Recipe } from "@/types";
-import Metadata from "@/components/Metadata";
 import { FaClock, FaUserClock, FaUserFriends } from "react-icons/fa";
-import Head from "next/head";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { allSlugs, getRecipe } from "@/services/sanity/contentServices";
-import IngredientsBlock from "@/components/IngredientsBlock";
-import MethodBlock from "@/components/MethodBlock";
 import Callout from "@/components/Callout";
-import TagList from "@/components/TagList";
-import RichText from "@/components/RichText";
-import { toPlainText } from "@portabletext/react";
+import Head from "next/head";
 import Image from "next/image";
+import IngredientsBlock from "@/components/IngredientsBlock";
+import Metadata from "@/components/Metadata";
+import MethodBlock from "@/components/MethodBlock";
+import { Recipe } from "@/types";
+import RichText from "@/components/RichText";
+import TagList from "@/components/TagList";
+import { toPlainText } from "@portabletext/react";
 import { urlForImage } from "@/services/sanity/imageServices";
 
 interface Props {

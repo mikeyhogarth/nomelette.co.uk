@@ -1,5 +1,5 @@
-import Link from "@/components/Link";
 import { FaLeaf } from "react-icons/fa";
+import Link from "@/components/Link";
 
 interface Props {
   tags: string[];

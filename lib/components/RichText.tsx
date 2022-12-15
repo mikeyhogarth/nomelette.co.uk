@@ -1,6 +1,6 @@
-import { PortableText } from "@portabletext/react";
-import Callout from "./Callout";
 import type { BlockContent } from "@/types";
+import Callout from "./Callout";
+import { PortableText } from "@portabletext/react";
 import { ReactNode } from "react";
 
 interface Props {

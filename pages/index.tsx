@@ -1,10 +1,10 @@
+import { FaCheese, FaCookieBite, FaHamburger } from "react-icons/fa";
 import Image from "next/image";
 import Link from "@/components/Link";
 import Metadata from "@/components/Metadata";
 import homepageImage1 from "../public/media/images/homepage1.jpg";
 import homepageImage2 from "../public/media/images/homepage2.jpg";
 import homepageImage3 from "../public/media/images/homepage3.jpg";
-import { FaCookieBite, FaCheese, FaHamburger } from "react-icons/fa";
 
 export default function Home() {
   return (

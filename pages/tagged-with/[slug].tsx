@@ -1,11 +1,11 @@
-import { GetStaticProps, GetStaticPaths } from "next";
-import { Recipe } from "@/types";
-import RecipeList from "@/components/RecipeList";
+import { GetStaticPaths, GetStaticProps } from "next";
 import {
-  getRecipesTaggedWith,
   getAllTags,
+  getRecipesTaggedWith,
 } from "@/services/sanity/contentServices";
 import Metadata from "@/components/Metadata";
+import { Recipe } from "@/types";
+import RecipeList from "@/components/RecipeList";
 
 interface Props {
   slug: string;

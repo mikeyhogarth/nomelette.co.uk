@@ -1,4 +1,4 @@
-import { FaHeart, FaFacebookSquare, FaGithubSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaGithubSquare, FaHeart } from "react-icons/fa";
 import Link from "@/components/Link";
 
 export default function Footer() {

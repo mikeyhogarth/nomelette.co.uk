@@ -1,17 +1,17 @@
 import { GetStaticProps } from "next";
+import Metadata from "@/components/Metadata";
+import TagImage from "@/components/TagImage";
 import TagList from "@/components/TagList";
 import { getAllTags } from "@/services/sanity/contentServices";
-import TagImage from "@/components/TagImage";
 
 /* Images */
-import springImage from "../../public/media/images/spring.jpg";
-import summerImage from "../../public/media/images/summer.jpg";
-import autumnImage from "../../public/media/images/autumn.jpg";
-import winterImage from "../../public/media/images/winter.jpg";
-import startersImage from "../../public/media/images/starters.jpg";
-import mainsImage from "../../public/media/images/mains.jpg";
-import dessertsImage from "../../public/media/images/desserts.jpg";
-import Metadata from "@/components/Metadata";
+import imgAutumn from "../../public/media/images/autumn.jpg";
+import imgDesserts from "../../public/media/images/desserts.jpg";
+import imgMains from "../../public/media/images/mains.jpg";
+import imgSpring from "../../public/media/images/spring.jpg";
+import imgStarters from "../../public/media/images/starters.jpg";
+import imgSummer from "../../public/media/images/summer.jpg";
+import imgWinter from "../../public/media/images/winter.jpg";
 /* 
   Some tags are called out specifically and don't need to be in the main tag list.
 */
@@ -37,32 +37,16 @@ export default function RecipePage({ tags }: Props) {
       <h1>Browse by Season</h1>
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
-          <TagImage
-            image={springImage}
-            text="Spring"
-            url="/tagged-with/spring"
-          />
+          <TagImage image={imgSpring} text="Spring" url="/tagged-with/spring" />
         </li>
         <li className="ml-0">
-          <TagImage
-            image={summerImage}
-            text="Summer"
-            url="/tagged-with/summer"
-          />
+          <TagImage image={imgSummer} text="Summer" url="/tagged-with/summer" />
         </li>
         <li className="ml-0">
-          <TagImage
-            image={autumnImage}
-            text="Autumn"
-            url="/tagged-with/autumn"
-          />
+          <TagImage image={imgAutumn} text="Autumn" url="/tagged-with/autumn" />
         </li>
         <li className="ml-0">
-          <TagImage
-            image={winterImage}
-            text="Winter"
-            url="/tagged-with/winter"
-          />
+          <TagImage image={imgWinter} text="Winter" url="/tagged-with/winter" />
         </li>
       </ul>
 
@@ -70,21 +54,21 @@ export default function RecipePage({ tags }: Props) {
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
           <TagImage
-            image={startersImage}
+            image={imgStarters}
             text="Starters"
             url="/tagged-with/starters"
           />
         </li>
         <li className="ml-0">
           <TagImage
-            image={mainsImage}
+            image={imgMains}
             text="Mains"
             url="/tagged-with/main-courses"
           />
         </li>
         <li className="ml-0">
           <TagImage
-            image={dessertsImage}
+            image={imgDesserts}
             text="Desserts"
             url="/tagged-with/desserts"
           />

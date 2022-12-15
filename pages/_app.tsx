@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import Link from "@/components/Link";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import Link from "@/components/Link";
+import Navigation from "@/components/Navigation";
+import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

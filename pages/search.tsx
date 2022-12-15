@@ -1,9 +1,9 @@
-import { useState, useEffect, FormEvent } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import Metadata from "@/components/Metadata";
+import { Recipe } from "@/types";
 import RecipeList from "@/components/RecipeList";
 import { search } from "@/services/sanity/contentServices";
-import { Recipe } from "@/types";
 
 // artificial limit to prevent spamming
 const MAX_SEARCH_LIMIT = 50;

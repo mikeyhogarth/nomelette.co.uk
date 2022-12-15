@@ -1,4 +1,4 @@
-import Link from "../components/Link";
+import Link from "@/components/Link";
 import { FaBars as FaHamburgerMenu, FaTimes as FaClose } from "react-icons/fa";
 import { useState } from "react";
 

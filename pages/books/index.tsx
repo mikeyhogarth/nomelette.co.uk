@@ -1,10 +1,10 @@
 import { GetStaticProps } from "next";
-import Link from "../../components/Link";
-import RichText from "../../components/RichText";
-import { Book } from "../../types";
-import { allBooks } from "../../services/sanity/contentServices";
+import Link from "@/components/Link";
+import RichText from "@/components/RichText";
+import { Book } from "@/types";
+import { allBooks } from "@/services/sanity/contentServices";
 import React from "react";
-import Metadata from "../../components/Metadata";
+import Metadata from "@/components/Metadata";
 
 interface Props {
   books: Book[];

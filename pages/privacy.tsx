@@ -1,4 +1,4 @@
-import Metadata from "../components/Metadata";
+import Metadata from "@/components/Metadata";
 
 export default function Privacy() {
   return (
@@ -49,12 +49,12 @@ export default function Privacy() {
         visit and use this application;
       </p>
       <dl className="pb-4">
-        <dt className="font-bold pt-4">Local and Session Storage</dt>{" "}
+        <dt className="pt-4 font-bold">Local and Session Storage</dt>{" "}
         <dd>
           These are used for caching data that the user has already
           downloaded/read.
         </dd>
-        <dt className="font-bold pt-4">Service Worker</dt>
+        <dt className="pt-4 font-bold">Service Worker</dt>
         <dd>
           Allows the user to install the app locally if they want to (will only
           be installed if the user asks it to be).{" "}

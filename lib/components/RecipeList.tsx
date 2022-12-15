@@ -1,8 +1,8 @@
-import Link from "../components/Link";
+import Link from "@/components/Link";
 import TagList from "./TagList";
-import { Recipe } from "../types";
+import { Recipe } from "@/types";
 import Image from "next/image";
-import { urlForImage } from "../services/sanity/imageServices";
+import { urlForImage } from "@/services/sanity/imageServices";
 
 interface Props {
   recipes: Recipe[];

@@ -1,8 +1,7 @@
 import { GetStaticProps } from "next";
-import TagList from "../../components/TagList";
-import Head from "next/head";
-import { getAllTags } from "../../services/sanity/contentServices";
-import TagImage from "../../components/TagImage";
+import TagList from "@/components/TagList";
+import { getAllTags } from "@/services/sanity/contentServices";
+import TagImage from "@/components/TagImage";
 
 /* Images */
 import springImage from "../../public/media/images/spring.jpg";
@@ -12,7 +11,7 @@ import winterImage from "../../public/media/images/winter.jpg";
 import startersImage from "../../public/media/images/starters.jpg";
 import mainsImage from "../../public/media/images/mains.jpg";
 import dessertsImage from "../../public/media/images/desserts.jpg";
-import Metadata from "../../components/Metadata";
+import Metadata from "@/components/Metadata";
 /* 
   Some tags are called out specifically and don't need to be in the main tag list.
 */

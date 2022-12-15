@@ -1,5 +1,5 @@
 import client from "./client";
-import { Recipe, Book } from "../../types";
+import { Recipe, Book } from "@/types";
 
 // return every recipe (hard limit of 50 for now)...
 const recipesQuery = `*[_type == "recipe"] { name, slug }[0...50]`;

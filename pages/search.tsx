@@ -1,9 +1,9 @@
 import { useState, useEffect, FormEvent } from "react";
 import { FaSpinner } from "react-icons/fa";
-import Metadata from "../components/Metadata";
-import RecipeList from "../components/RecipeList";
-import { search } from "../services/sanity/contentServices";
-import { Recipe } from "../types";
+import Metadata from "@/components/Metadata";
+import RecipeList from "@/components/RecipeList";
+import { search } from "@/services/sanity/contentServices";
+import { Recipe } from "@/types";
 
 // artificial limit to prevent spamming
 const MAX_SEARCH_LIMIT = 50;
@@ -63,7 +63,7 @@ const Search = () => {
           name="searchterm"
           aria-label="Search"
           onChange={(event) => setSearchTerm(event.target.value)}
-          className="p-2 w-8/12 md:w-72 border border-primary  h-12"
+          className="h-12 w-8/12 border border-primary p-2  md:w-72"
           type="search"
           autoComplete="off"
           required={true}
@@ -72,7 +72,7 @@ const Search = () => {
         />
         <button
           type="submit"
-          className="bg-primary text-white px-4 h-12 w-4/12 md:w-20 hover:brightness-110"
+          className="h-12 w-4/12 bg-primary px-4 text-white hover:brightness-110 md:w-20"
         >
           Search
         </button>
@@ -85,7 +85,7 @@ const Search = () => {
         </p>
       )}
 
-      {loading && <FaSpinner className="text-3xl animate-spin" />}
+      {loading && <FaSpinner className="animate-spin text-3xl" />}
       {results.length === 0 && !loading && searchCount > 0 && (
         <p className="pt-4">
           No results for the search term &quot;

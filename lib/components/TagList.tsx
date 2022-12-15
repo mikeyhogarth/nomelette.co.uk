@@ -1,4 +1,4 @@
-import Link from "../components/Link";
+import Link from "@/components/Link";
 import { FaLeaf } from "react-icons/fa";
 
 interface Props {

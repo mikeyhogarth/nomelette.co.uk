@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Metadata from "../components/Metadata";
 
 class MyDocument extends Document {
   render() {

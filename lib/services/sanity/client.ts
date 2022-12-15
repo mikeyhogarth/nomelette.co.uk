@@ -1,5 +1,5 @@
 import sanityClient from "@sanity/client";
-import sanityConfig from "../../studio/sanity.json";
+import sanityConfig from "@/studio/sanity.json";
 
 export default sanityClient({
   projectId: sanityConfig.api.projectId,

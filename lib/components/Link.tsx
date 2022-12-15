@@ -1,15 +1,11 @@
-import { default as NextLink } from "next/link";
-import { ReactNode } from "react";
+import { default as NextLink, type LinkProps } from "next/link";
+import { type HtmlHTMLAttributes } from "react";
 
-interface Props {
-  href: string;
-  children: ReactNode;
-
-  // Rest props
-  [x: string]: any;
-}
-
-const Link = ({ title, href, children, ...props }: Props) => {
+const Link = ({
+  href,
+  children,
+  ...props
+}: LinkProps & HtmlHTMLAttributes<HTMLAnchorElement>) => {
   return (
     <NextLink
       href={href}

@@ -39,7 +39,7 @@ export default function RecipePage({ books }: Props) {
 }
 
 // This function gets called at build time.
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const books = await allBooks();
   return { props: { books }, revalidate: 10 };
 };

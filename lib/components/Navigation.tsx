@@ -10,7 +10,7 @@ export default function Navigation() {
       <button
         className="rounded-full p-3 text-xl transition hover:backdrop-brightness-75 md:hidden"
         aria-label="Open Menu"
-        onClick={(e) => setOpen(!open)}
+        onClick={() => setOpen(!open)}
       >
         {open ? <FaClose /> : <FaHamburgerMenu />}
       </button>
@@ -33,7 +33,7 @@ export default function Navigation() {
 interface NavLinkProps {
   href: string;
   text: string;
-  setOpen: (isOpen: boolean) => void;
+  setOpen: (setOpen: boolean) => void;
 }
 
 function NavLink({ href, text, setOpen }: NavLinkProps) {

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../components/Link";
 import { FaLeaf } from "react-icons/fa";
 
 interface Props {
@@ -19,7 +19,7 @@ export default function TagList({ tags }: Props) {
               }`}
             >
               {tag === "vegetarian" && (
-                <FaLeaf className="inline mr-1 relative -top-px" />
+                <FaLeaf className="relative -top-px mr-1 inline" />
               )}
               {tag}
             </Link>

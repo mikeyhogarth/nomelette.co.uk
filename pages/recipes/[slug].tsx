@@ -45,7 +45,7 @@ export default function RecipePage({ recipe }: Props) {
       <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
         <h1 property="name">{recipe.name}</h1>
         {recipe.image && (
-          <figure className="main-recipe-image">
+          <figure className="w-fit border border-gray-200 bg-gray-100 px-2 py-2 md:inline-block lg:float-right lg:ml-4 lg:mb-4 lg:inline">
             <Image
               src={urlForImage(recipe.image).width(500).height(500).url()}
               alt={`Picture of ${recipe.name}`}
@@ -53,7 +53,7 @@ export default function RecipePage({ recipe }: Props) {
               width={500}
               height={500}
             />
-            <figcaption className="w-full text-center block italic">
+            <figcaption className="block w-full text-center italic">
               {recipe.name}
             </figcaption>
           </figure>
@@ -67,31 +67,46 @@ export default function RecipePage({ recipe }: Props) {
           )}
         </div>
         {(recipe.preparation_time || recipe.cooking_time || recipe.serves) && (
-          <dl className="mt-6">
+          <dl className="mt-6 flex flex-row flex-wrap border md:w-96">
             {recipe.preparation_time && (
               <>
-                <dt>
-                  <FaUserClock className="inline-block mr-1" />
+                <dt className="basis-6/12 border-r bg-gray-100 p-2 font-semibold text-gray-700">
+                  <FaUserClock className="mr-1 inline-block" />
                   Preparation
                 </dt>
-                <dd property="prepTime">{recipe.preparation_time}</dd>
+                <dd
+                  className="flex-grow basis-6/12 overflow-hidden bg-gray-50 p-2 italic"
+                  property="prepTime"
+                >
+                  {recipe.preparation_time}
+                </dd>
               </>
             )}
             {recipe.cooking_time && (
               <>
-                <dt>
-                  <FaClock className="inline-block mr-1" /> Cooking
+                <dt className="basis-6/12 border-r bg-gray-100 p-2 font-semibold text-gray-700">
+                  <FaClock className="mr-1 inline-block" /> Cooking
                 </dt>
-                <dd property="cookTime">{recipe.cooking_time}</dd>
+                <dd
+                  property="cookTime"
+                  className="flex-grow basis-6/12 overflow-hidden bg-gray-50 p-2 italic"
+                >
+                  {recipe.cooking_time}
+                </dd>
               </>
             )}
             {recipe.serves && (
               <>
-                <dt>
-                  <FaUserFriends className="inline-block mr-1" />
+                <dt className="basis-6/12 border-r bg-gray-100 p-2 font-semibold text-gray-700">
+                  <FaUserFriends className="mr-1 inline-block" />
                   Serves
                 </dt>
-                <dd property="recipeYield">{recipe.serves}</dd>
+                <dd
+                  className="flex-grow basis-6/12 overflow-hidden bg-gray-50 p-2 italic"
+                  property="recipeYield"
+                >
+                  {recipe.serves}
+                </dd>
               </>
             )}
           </dl>

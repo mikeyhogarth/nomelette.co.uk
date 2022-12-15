@@ -12,9 +12,14 @@ export default function MethodBlock({ content }: Props) {
   return (
     <>
       <h2>Method</h2>
-      <ol className="method-list">
+      <ol className="list-none [counter-reset:item]">
         {methodList.map((line, idx) => (
-          <li className="flex" key={idx} property="recipeInstructions">
+          <li
+            className="m-4 ml-0 flex leading-8 [counter-increment:item] before:mr-4
+            before:inline-block before:h-8 before:w-8 before:shrink-0 before:rounded-full before:bg-primary before:text-center before:text-white before:[content:counter(item)]"
+            key={idx}
+            property="recipeInstructions"
+          >
             {line}
           </li>
         ))}

@@ -3,7 +3,7 @@ Headings
 */
 
 h1 {
-  @apply text-4xl print:text-3xl pt-6;
+  @apply pt-6 text-4xl print:text-3xl;
 }
 
 main h1 {
@@ -51,11 +51,11 @@ main h2,
 main h3,
 main h4,
 main h5 {
-  @apply uppercase tracking-widest font-bold;
+  @apply font-bold uppercase tracking-widest;
 }
 
 p {
-  @apply text-base mb-4 leading-loose;
+  @apply mb-4 text-base leading-loose;
 }
 
 /**
@@ -74,19 +74,4 @@ ul {
 ol li,
 ul li {
   @apply ml-4 text-base;
-}
-
-/*
-Links
-*/
-main a {
-  @apply text-primary underline;
-}
-
-main a:hover {
-  @apply hover:brightness-110 underline transition-all;
-}
-
-main a:visited {
-  @apply text-secondary;
 }

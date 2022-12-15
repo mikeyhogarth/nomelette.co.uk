@@ -1,25 +1,27 @@
 import { FaHeart, FaFacebookSquare, FaGithubSquare } from "react-icons/fa";
-import Link from "next/link";
+import Link from "../components/Link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 text-center p-10 mt-20 text-gray-700">
-      <div className="social-icons mb-3 text-center text-4xl text-gray-400">
+    <footer className="mt-20 w-full bg-gray-100 p-10 text-center text-gray-700">
+      <div className="social-icons mb-3 text-center text-4xl ">
         <Link
           title="Facebook Community"
           href={`https://www.facebook.com/Nomelette/`}
+          className="text-gray-400 hover:text-black"
         >
-          <FaFacebookSquare className="inline m-1 hover:text-black" />
+          <FaFacebookSquare className="m-1 inline" />
         </Link>
         <Link
           title="Source Code"
           href="https://github.com/mikeyhogarth/nomelette.co.uk"
+          className="text-gray-400 hover:text-black"
         >
-          <FaGithubSquare className="inline m-1 hover:text-black" />
+          <FaGithubSquare className="m-1 inline" />
         </Link>
       </div>
       <strong>Nomelette</strong> {new Date().getFullYear()} :: Made with
-      <FaHeart className="inline mx-1" />
+      <FaHeart className="mx-1 inline" />
       by Mikey and Laura.
       <Link href="/privacy" className="privacy-statement block hover:underline">
         Privacy statement

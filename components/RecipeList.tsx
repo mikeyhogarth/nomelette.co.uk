@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../components/Link";
 import TagList from "./TagList";
 import { Recipe } from "../types";
 import Image from "next/image";
@@ -12,12 +12,12 @@ const RecipeList = ({ recipes }: Props) => {
   return (
     <ul className="list-none ">
       {recipes.map((r) => (
-        <li key={r.name} className="mx-0 py-4 border-b leading-none">
+        <li key={r.name} className="mx-0 border-b py-4 leading-none">
           {r.image && (
-            <div className="float-right leading-none m-4 mr-0 mt-0">
+            <div className="float-right m-4 mr-0 mt-0 leading-none">
               <Link
                 href={`/recipes/${r.slug.current}`}
-                className="text-2xl text-secondary font-bold no-underline"
+                className="text-2xl font-bold text-secondary no-underline"
               >
                 <Image
                   src={urlForImage(r.image).width(500).height(500).url()}
@@ -32,12 +32,12 @@ const RecipeList = ({ recipes }: Props) => {
           )}
           <Link
             href={`/recipes/${r.slug.current}`}
-            className="text-2xl text-secondary font-bold no-underline"
+            className="text-2xl font-bold text-secondary no-underline"
           >
             {r.name}
           </Link>
           {(r.cooking_time || r.preparation_time) && (
-            <p className="italic text-gray-400 leading-normal py-2">
+            <p className="py-2 italic leading-normal text-gray-400">
               {r.cooking_time && <span>{r.cooking_time} cooking</span>}
               {r.cooking_time && r.preparation_time && <span> plus </span>}
               {r.preparation_time && (

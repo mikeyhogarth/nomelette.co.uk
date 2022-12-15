@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import Link from "next/link";
+import Link from "../../components/Link";
 import { PortableText } from "@portabletext/react";
 import { Book } from "../../types";
 import { allBooks } from "../../services/sanity/contentServices";

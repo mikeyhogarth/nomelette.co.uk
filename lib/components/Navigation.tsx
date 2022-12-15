@@ -1,5 +1,6 @@
 import { FaTimes as FaClose, FaBars as FaHamburgerMenu } from "react-icons/fa";
 import Link from "@/components/Link";
+import { clsx } from "clsx";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -16,9 +17,11 @@ export default function Navigation() {
       </button>
 
       <ul
-        className={`fixed left-0 my-2 w-full list-none overflow-hidden bg-black py-0 text-center transition-height duration-500 ease-in-out md:relative md:my-0 md:inline-block md:bg-transparent md:text-right ${
-          open ? "h-screen" : "h-0"
-        } top-12 z-10 md:top-0 md:h-fit`}
+        className={clsx(
+          "fixed left-0 top-12 z-10 my-2 w-full list-none overflow-hidden bg-black py-0 text-center transition-height duration-500 ease-in-out md:relative md:top-0 md:my-0 md:inline-block md:h-fit md:bg-transparent md:text-right",
+          open && "h-screen",
+          !open && "h-0"
+        )}
       >
         <NavLink href="/" text="Home" setOpen={setOpen} />
         <NavLink href="/about" text="About" setOpen={setOpen} />

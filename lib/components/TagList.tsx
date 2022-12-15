@@ -1,5 +1,6 @@
 import { FaLeaf } from "react-icons/fa";
 import Link from "@/components/Link";
+import { clsx } from "clsx";
 
 interface Props {
   tags: string[];
@@ -14,9 +15,11 @@ export default function TagList({ tags }: Props) {
           <li key={idx} property="recipeCategory" className="m-0">
             <Link
               href={`/tagged-with/${tag}`}
-              className={`rounded-md py-1 px-2 text-base text-white no-underline brightness-100 ${
-                tag === "vegetarian" ? "bg-green-500" : "bg-primary"
-              }`}
+              className={clsx(
+                "rounded-md py-1 px-2 text-base text-white no-underline brightness-100",
+                tag == "vegetarian" && "bg-green-500",
+                tag != "vegetarian" && "bg-primary"
+              )}
             >
               {tag === "vegetarian" && (
                 <FaLeaf className="relative -top-px mr-1 inline" />

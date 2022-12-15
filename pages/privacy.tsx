@@ -50,7 +50,7 @@ export default function Privacy() {
         visit and use this application;
       </Typography>
       <dl className="pb-4">
-        <dt className="pt-4 font-bold">Local and Session Storage</dt>{" "}
+        <dt className="pt-4 font-bold">Local and Session Storage</dt>
         <dd>
           These are used for caching data that the user has already
           downloaded/read.
@@ -58,7 +58,7 @@ export default function Privacy() {
         <dt className="pt-4 font-bold">Service Worker</dt>
         <dd>
           Allows the user to install the app locally if they want to (will only
-          be installed if the user asks it to be).{" "}
+          be installed if the user asks it to be).
         </dd>
       </dl>
       <Typography el="p">

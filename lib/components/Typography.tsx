@@ -31,9 +31,7 @@ const Typography = ({ el, children, className }: Props) => {
     React.createElement(el, props, children);
 
   return (
-    <Element className={className || clsx(typograpyClasses[el])}>
-      {children}
-    </Element>
+    <Element className={className || typograpyClasses[el]}>{children}</Element>
   );
 };
 

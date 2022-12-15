@@ -31,7 +31,7 @@ export default function IngredientsBlock({ content }: Props) {
           <ul className="list-none italic">
             {block.slice(multiBlock ? 1 : 0).map((line, lineIndex) => (
               <li
-                className="ml-0"
+                className="my-1 ml-0 text-base"
                 key={`intredientLine__${lineIndex}`}
                 property="ingredients"
               >

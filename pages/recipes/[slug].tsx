@@ -8,7 +8,8 @@ import IngredientsBlock from "../../components/IngredientsBlock";
 import MethodBlock from "../../components/MethodBlock";
 import Callout from "../../components/Callout";
 import TagList from "../../components/TagList";
-import { PortableText, toPlainText } from "@portabletext/react";
+import RichText from "../../components/RichText";
+import { toPlainText } from "@portabletext/react";
 import Image from "next/image";
 import { urlForImage } from "../../services/sanity/imageServices";
 
@@ -45,7 +46,7 @@ export default function RecipePage({ recipe }: Props) {
       <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
         <h1 property="name">{recipe.name}</h1>
         {recipe.image && (
-          <figure className="w-fit border border-gray-200 bg-gray-100 px-2 py-2 md:inline-block lg:float-right lg:ml-4 lg:mb-4 lg:inline">
+          <figure className="w-fit border border-gray-200 bg-gray-100 px-2 py-2 md:inline-block lg:float-right lg:ml-4 lg:mb-4 lg:inline print:hidden">
             <Image
               src={urlForImage(recipe.image).width(500).height(500).url()}
               alt={`Picture of ${recipe.name}`}
@@ -63,7 +64,7 @@ export default function RecipePage({ recipe }: Props) {
 
         <div property="description">
           {recipe.description && toPlainText(recipe.description).length > 0 && (
-            <PortableText value={recipe.description} />
+            <RichText value={recipe.description} />
           )}
         </div>
         {(recipe.preparation_time || recipe.cooking_time || recipe.serves) && (
@@ -116,7 +117,7 @@ export default function RecipePage({ recipe }: Props) {
         <MethodBlock content={recipe.method} />
         {recipe.footnote && toPlainText(recipe.footnote).length > 0 && (
           <Callout>
-            <PortableText value={recipe.footnote} />
+            <RichText value={recipe.footnote} />
           </Callout>
         )}
       </article>

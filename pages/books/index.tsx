@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import Link from "../../components/Link";
-import { PortableText } from "@portabletext/react";
+import RichText from "../../components/RichText";
 import { Book } from "../../types";
 import { allBooks } from "../../services/sanity/contentServices";
 import React from "react";
@@ -28,7 +28,7 @@ export default function RecipePage({ books }: Props) {
       {books.map((book) => (
         <React.Fragment key={book.title}>
           <h2>{book.title}</h2>
-          <PortableText value={book.description} />
+          <RichText value={book.description} />
           <Link href={`/books/${book.slug.current}`}>
             Browse recipes from {book.title}
           </Link>

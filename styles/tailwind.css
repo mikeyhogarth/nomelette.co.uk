@@ -11,8 +11,7 @@
   input[type="search"],
   input[type="submit"],
   .input-checkbox {
-    -webkit-appearance: none;
-    border-radius: 0;
+    @apply rounded-none [-webkit-appearance:none];
   }
 
   input:focus-visible {

@@ -55,23 +55,21 @@ main h5 {
 }
 
 p {
-  @apply mb-4 text-base leading-loose;
+  @apply my-2 text-base leading-loose;
 }
 
-/**
-Lists
-*/
-ol,
-ul {
-  @apply my-6;
+/* print for headings */
+h1 {
+  @apply print:my-4 print:text-3xl;
 }
-ol {
-  @apply list-decimal;
+
+main h1 {
+  @apply print:border-none;
 }
-ul {
-  @apply list-disc;
-}
-ol li,
-ul li {
-  @apply ml-4 text-base;
+
+h2,
+h3,
+h4,
+h5 {
+  @apply print:my-4 print:text-base !important;
 }

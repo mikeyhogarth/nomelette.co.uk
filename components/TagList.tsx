@@ -7,14 +7,14 @@ interface Props {
 
 export default function TagList({ tags }: Props) {
   return (
-    <ul className="tag-list">
+    <ul className="my-6 flex list-none flex-row flex-wrap gap-1 print:hidden">
       {(tags || [])
         .sort((a, b) => a.localeCompare(b))
         .map((tag, idx) => (
-          <li key={idx} property="recipeCategory">
+          <li key={idx} property="recipeCategory" className="m-0">
             <Link
               href={`/tagged-with/${tag}`}
-              className={`${
+              className={`rounded-md py-1 px-2 text-base text-white no-underline brightness-100 ${
                 tag === "vegetarian" ? "bg-green-500" : "bg-primary"
               }`}
             >

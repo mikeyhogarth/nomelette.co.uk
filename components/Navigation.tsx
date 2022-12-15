@@ -7,12 +7,18 @@ export default function Navigation() {
 
   return (
     <nav className="relative w-full text-right">
-      <button aria-label="Open Menu" onClick={(e) => setOpen(!open)}>
+      <button
+        className="rounded-full p-3 text-xl transition hover:backdrop-brightness-75 md:hidden"
+        aria-label="Open Menu"
+        onClick={(e) => setOpen(!open)}
+      >
         {open ? <FaClose /> : <FaHamburgerMenu />}
       </button>
 
       <ul
-        className={`${open ? "h-screen" : "h-0"} top-12 z-10 md:top-0 md:h-fit`}
+        className={`fixed left-0 my-2 w-full list-none overflow-hidden bg-black py-0 text-center transition-height duration-500 ease-in-out md:relative md:my-0 md:inline-block md:bg-transparent md:text-right ${
+          open ? "h-screen" : "h-0"
+        } top-12 z-10 md:top-0 md:h-fit`}
       >
         <NavLink href="/" text="Home" setOpen={setOpen} />
         <NavLink href="/about" text="About" setOpen={setOpen} />
@@ -32,7 +38,7 @@ interface NavLinkProps {
 
 function NavLink({ href, text, setOpen }: NavLinkProps) {
   return (
-    <li className="md:inline-block">
+    <li className="ml-6 py-4 text-2xl md:inline-block md:py-0 md:text-xl">
       <Link
         href={href}
         className="hover:underline"

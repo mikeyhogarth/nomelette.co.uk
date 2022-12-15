@@ -36,29 +36,29 @@ export default function RecipePage({ tags }: Props) {
     <div>
       <Metadata title="Browse" />
       <h1>Browse by Season</h1>
-      <ul className="picture-tags">
-        <li>
+      <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
+        <li className="ml-0">
           <TagImage
             image={springImage}
             text="Spring"
             url="/tagged-with/spring"
           />
         </li>
-        <li>
+        <li className="ml-0">
           <TagImage
             image={summerImage}
             text="Summer"
             url="/tagged-with/summer"
           />
         </li>
-        <li>
+        <li className="ml-0">
           <TagImage
             image={autumnImage}
             text="Autumn"
             url="/tagged-with/autumn"
           />
         </li>
-        <li>
+        <li className="ml-0">
           <TagImage
             image={winterImage}
             text="Winter"
@@ -68,22 +68,22 @@ export default function RecipePage({ tags }: Props) {
       </ul>
 
       <h1>Browse by Course</h1>
-      <ul className="picture-tags">
-        <li>
+      <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
+        <li className="ml-0">
           <TagImage
             image={startersImage}
             text="Starters"
             url="/tagged-with/starters"
           />
         </li>
-        <li>
+        <li className="ml-0">
           <TagImage
             image={mainsImage}
             text="Mains"
             url="/tagged-with/main-courses"
           />
         </li>
-        <li>
+        <li className="ml-0">
           <TagImage
             image={dessertsImage}
             text="Desserts"

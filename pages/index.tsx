@@ -55,13 +55,13 @@ export default function Home() {
         <div className="mb-14">
           <Link
             href="/recipes"
-            className="m-2 inline-block rounded-xl bg-primary py-2 px-4 text-xl text-white no-underline md:text-2xl"
+            className="m-2 inline-block rounded-xl border border-primary bg-primary py-2 px-4 text-xl text-white no-underline md:text-2xl"
           >
             Browse Recipes
           </Link>
           <Link
             href="/about"
-            className="m-2 inline-block rounded-xl border-primary bg-white py-2 px-4 text-xl text-primary no-underline md:text-2xl"
+            className="m-2 inline-block rounded-xl border border-primary bg-white py-2 px-4 text-xl text-primary no-underline md:text-2xl"
           >
             What is Nomelette?
           </Link>

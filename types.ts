@@ -4,7 +4,7 @@ export interface Slug {
   current: string;
 }
 
-type BlockContent = {
+export type BlockContent = {
   _key: string;
   _type: string;
 };

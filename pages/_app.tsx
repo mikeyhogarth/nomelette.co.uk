@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           />
         )}
       </Head>
-      <header className="sticky top-0 z-50 flex flex-row bg-primary px-10 py-2 text-white md:py-5 print:hidden">
+      <header className="sticky top-0 z-50 flex flex-row bg-primary px-10 py-2 text-white md:py-5 print:hidden print:hidden">
         <span className="my-0 inline-block py-0 font-brand text-3xl drop-shadow-lg">
           <Link className="text-white no-underline" href={`/`}>
             Nomelette

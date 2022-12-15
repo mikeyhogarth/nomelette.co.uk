@@ -1,4 +1,8 @@
-const path = require("path");
+/*
+Note to self: the commented out bits in this config enable a higher level of linting.
+*/
+
+//const path = require("path");
 
 module.exports = {
   extends: [

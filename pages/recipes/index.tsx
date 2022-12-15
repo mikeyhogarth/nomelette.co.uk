@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Metadata from "@/components/Metadata";
 import TagImage from "@/components/TagImage";
 import TagList from "@/components/TagList";
+import Typography from "@/components/Typography";
 import { getAllTags } from "@/services/sanity/contentServices";
 
 /* Images */
@@ -34,7 +35,7 @@ export default function RecipePage({ tags }: Props) {
   return (
     <div>
       <Metadata title="Browse" />
-      <h1>Browse by Season</h1>
+      <Typography el="h1">Browse by Season</Typography>
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
           <TagImage image={imgSpring} text="Spring" url="/tagged-with/spring" />
@@ -50,7 +51,7 @@ export default function RecipePage({ tags }: Props) {
         </li>
       </ul>
 
-      <h1>Browse by Course</h1>
+      <Typography el="h1">Browse by Course</Typography>
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
           <TagImage
@@ -75,7 +76,7 @@ export default function RecipePage({ tags }: Props) {
         </li>
       </ul>
 
-      <h1>Browse by tag</h1>
+      <Typography el="h1">Browse by tag</Typography>
       <TagList
         tags={tags.filter((t) => t?.length && !SPECIAL_TAGS.includes(t))}
       />

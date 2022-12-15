@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/app.css";
 import type { AppProps } from "next/app";
 import Footer from "@/components/Footer";
 import Head from "next/head";
@@ -32,7 +32,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
         <Navigation />
       </header>
-      <main className="min-h-fit px-6 md:px-10" style={{ minHeight: "60vh" }}>
+      <main
+        className="min-h-fit px-6 font-sans md:px-10"
+        style={{ minHeight: "60vh" }}
+      >
         <Component {...pageProps} />
       </main>
       <Footer />

@@ -6,6 +6,7 @@ import {
 import Metadata from "@/components/Metadata";
 import { Recipe } from "@/types";
 import RecipeList from "@/components/RecipeList";
+import Typography from "@/components/Typography";
 
 interface Props {
   slug: string;
@@ -17,12 +18,12 @@ export default function RecipePage({ recipes, slug }: Props) {
     <div>
       <Metadata title={`Recipes tagged with ${slug}`} />
 
-      <h1>{slug}</h1>
+      <Typography el="h1">{slug}</Typography>
       {!!recipes.length && <RecipeList recipes={recipes} />}
       {!recipes.length && (
-        <p>
+        <Typography el="p">
           Very sorry - there are no recipes tagged with <strong>{slug}</strong>
-        </p>
+        </Typography>
       )}
     </div>
   );

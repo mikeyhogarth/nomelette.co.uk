@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Typography from "@/components/Typography";
 
 interface Props {
   content: string;
@@ -24,7 +25,7 @@ export default function IngredientsBlock({ content }: Props) {
 
   return (
     <>
-      <h2>Ingredients</h2>
+      <Typography el="h2">Ingredients</Typography>
       {ingredientBlocks.map((block, blockIndex) => (
         <Fragment key={`intredientBlock__${blockIndex}`}>
           {multiBlock && <h3>{block[0]}</h3>}

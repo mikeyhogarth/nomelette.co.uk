@@ -1,3 +1,5 @@
+import Typography from "@/components/Typography";
+
 interface Props {
   content: string;
 }
@@ -11,7 +13,7 @@ export default function MethodBlock({ content }: Props) {
 
   return (
     <>
-      <h2>Method</h2>
+      <Typography el="h2">Method</Typography>
       <ol className="list-none [counter-reset:item] print:list-item">
         {methodList.map((line, idx) => (
           <li
@@ -24,7 +26,7 @@ export default function MethodBlock({ content }: Props) {
           </li>
         ))}
       </ol>
-      <hr className="mt-20 mb-12 print:hidden" />
+      <hr className="my-10 print:hidden" />
     </>
   );
 }

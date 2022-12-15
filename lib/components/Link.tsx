@@ -1,11 +1,11 @@
 import { type LinkProps, default as NextLink } from "next/link";
-import { type HtmlHTMLAttributes } from "react";
+import { type HTMLAttributes } from "react";
 
 const Link = ({
   href,
   children,
   ...props
-}: LinkProps & HtmlHTMLAttributes<HTMLAnchorElement>) => {
+}: LinkProps & HTMLAttributes<HTMLAnchorElement>) => {
   return (
     <NextLink
       href={href}

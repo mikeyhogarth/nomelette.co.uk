@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "@/components/Link";
 import { Recipe } from "@/types";
 import TagList from "./TagList";
+import Typography from "./Typography";
 import { urlForImage } from "@/services/sanity/imageServices";
 
 interface Props {
@@ -37,13 +38,16 @@ const RecipeList = ({ recipes }: Props) => {
             {r.name}
           </Link>
           {(r.cooking_time || r.preparation_time) && (
-            <p className="py-2 italic leading-normal text-gray-400">
+            <Typography
+              el="p"
+              className="py-2 italic leading-normal text-gray-400"
+            >
               {r.cooking_time && <span>{r.cooking_time} cooking</span>}
               {r.cooking_time && r.preparation_time && <span> plus </span>}
               {r.preparation_time && (
                 <span>{r.preparation_time.toLowerCase()} prep.</span>
               )}
-            </p>
+            </Typography>
           )}
           <TagList tags={r.tags} />
           <br className="clear-both h-0" />

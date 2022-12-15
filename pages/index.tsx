@@ -38,11 +38,11 @@ export default function Home() {
           height={300}
         />
       </div>
-      <div className="text-center">
+      <div className="mt-10 text-center">
         <h2 className="font-brand text-6xl lowercase tracking-tight text-primary ">
           Nomelette
         </h2>
-        <p className="text-4xl font-extrabold ">
+        <p className="mt-6 text-4xl font-extrabold">
           The recipes of Sheila Hogarth
         </p>
 

@@ -10,6 +10,7 @@ import MethodBlock from "@/components/MethodBlock";
 import { Recipe } from "@/types";
 import RichText from "@/components/RichText";
 import TagList from "@/components/TagList";
+import Typography from "@/components/Typography";
 import { toPlainText } from "@portabletext/react";
 import { urlForImage } from "@/services/sanity/imageServices";
 
@@ -44,7 +45,9 @@ export default function RecipePage({ recipe }: Props) {
         />
       </Head>
       <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
-        <h1 property="name">{recipe.name}</h1>
+        <Typography el="h1" property="name">
+          {recipe.name}
+        </Typography>
         {recipe.image && (
           <figure className="w-fit border border-gray-200 bg-gray-100 px-2 py-2 md:inline-block lg:float-right lg:ml-4 lg:mb-4 lg:inline print:hidden">
             <Image
@@ -54,7 +57,7 @@ export default function RecipePage({ recipe }: Props) {
               width={500}
               height={500}
             />
-            <figcaption className="block w-full text-center italic">
+            <figcaption className="pt-2 text-center italic">
               {recipe.name}
             </figcaption>
           </figure>

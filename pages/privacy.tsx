@@ -1,12 +1,13 @@
 import Metadata from "@/components/Metadata";
+import Typography from "@/components/Typography";
 
 export default function Privacy() {
   return (
     <>
       <Metadata title="Privacy" />
 
-      <h2>In a nutshell...</h2>
-      <p>
+      <Typography el="h2">In a nutshell...</Typography>
+      <Typography el="p">
         We don&apos;t track you, we don&apos;t want to track you. We would love
         to know how you are using this site because we spent a lot of time
         putting it together and we are interested in how many people are
@@ -14,40 +15,40 @@ export default function Privacy() {
         the law as it currently stands would require us to inconvenience our
         users with a popup if we wanted to do that, and we do not want to be
         part of that problem.
-      </p>
-      <p>
+      </Typography>
+      <Typography el="p">
         We are going to give you some cookie-like things to help the site run
         faster, these are explained below. If you do not approve of this, please
         leave the site immediately.
-      </p>
-      <h2>Soapbox</h2>
-      <p>
+      </Typography>
+      <Typography el="h2">Soapbox</Typography>
+      <Typography el="p">
         The creators of this site are opposed to GDPR in its current form. We
         feel that the law is currently confusing and over the top, and that the
         implementers do not understand the technology involved or the damage
         they are doing to innovation by restricting it in the way they have.
         This site was made far less possible by their careless rulings and
         legistlation.
-      </p>
-      <p>
+      </Typography>
+      <Typography el="p">
         That said, we don&apos;t want to get into any trouble about this
         completely harmless website so we are forced legally to provide the
         following statements to you.
-      </p>
-      <h2>Privacy</h2>
-      <p>
+      </Typography>
+      <Typography el="h2">Privacy</Typography>
+      <Typography el="p">
         nomelette.co.uk is a read-only resource providing recipes to people who
         might want to cook them. This application does not store, or attempt to
         store, any personally identifiable information from users - this
         includes anonymous analytics that would otherwise help us to improve the
         site.
-      </p>
-      <h2>Cookies and Cookie-like items</h2>
-      <p>
+      </Typography>
+      <Typography el="h2">Cookies and Cookie-like items</Typography>
+      <Typography el="p">
         We do not set any cookies on your device, however there are some
         &quot;cookie-like&quot; items that may be set on your device when you
         visit and use this application;
-      </p>
+      </Typography>
       <dl className="pb-4">
         <dt className="pt-4 font-bold">Local and Session Storage</dt>{" "}
         <dd>
@@ -60,7 +61,7 @@ export default function Privacy() {
           be installed if the user asks it to be).{" "}
         </dd>
       </dl>
-      <p>
+      <Typography el="p">
         These exist purely to prevent the user having to re-download data
         they&apos;ve already downloaded, provide a better user experience and to
         make the site load faster. We believe this usage falls under the
@@ -69,7 +70,7 @@ export default function Privacy() {
         needlessly carrying out that communication). We also believe these
         cookie-like items to be strictly necessary / essential to ensure this
         site maintains a low carbon footprint.
-      </p>
+      </Typography>
     </>
   );
 }

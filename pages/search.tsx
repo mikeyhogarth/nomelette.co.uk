@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import Metadata from "@/components/Metadata";
 import { Recipe } from "@/types";
 import RecipeList from "@/components/RecipeList";
+import Typography from "@/components/Typography";
 import { search } from "@/services/sanity/contentServices";
 
 // artificial limit to prevent spamming
@@ -55,8 +56,8 @@ const Search = () => {
     <>
       <Metadata title="Search" />
 
-      <h2>Search</h2>
-      <p>Enter search terms into the field below.</p>
+      <Typography el="h2">Search</Typography>
+      <Typography el="p">Enter search terms into the field below.</Typography>
       <form onSubmit={handleSubmit}>
         <input
           id="searchterm"
@@ -79,18 +80,18 @@ const Search = () => {
       </form>
 
       {results.length > 0 && (
-        <p className="pt-4">
+        <Typography el="p">
           Showing {results.length} result{results.length > 1 ? "s" : ""} for the
           search term <span className="font-bold">{lastSearchTerm}</span>.
-        </p>
+        </Typography>
       )}
 
       {loading && <FaSpinner className="animate-spin text-3xl" />}
       {results.length === 0 && !loading && searchCount > 0 && (
-        <p className="pt-4">
+        <Typography el="p">
           No results for the search term &quot;
           {lastSearchTerm}&quot;.
-        </p>
+        </Typography>
       )}
 
       <RecipeList recipes={results} />

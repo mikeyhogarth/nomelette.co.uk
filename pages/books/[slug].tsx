@@ -12,7 +12,9 @@ export default function RecipePage({ book }: Props) {
   return (
     <div>
       <Metadata title={`Recipes from the book ${book.title}`} />
-      <h1>Recipes from the book &quot;{book.title}&quot;</h1>
+      <Typography el="h1">
+        Recipes from the book &quot;{book.title}&quot;
+      </Typography>
       <ul>
         {book.recipes.map((r) => (
           <li key={r.name}>

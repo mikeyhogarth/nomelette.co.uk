@@ -34,16 +34,36 @@ export default function RecipePage({ tags }: Props) {
       <Typography el="h1">Browse by Season</Typography>
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
-          <TagImage image={imgSpring} text="Spring" url="/tagged-with/spring" />
+          <TagImage
+            image={imgSpring}
+            text="Spring"
+            url="/tagged-with/spring"
+            priority={true}
+          />
         </li>
         <li className="ml-0">
-          <TagImage image={imgSummer} text="Summer" url="/tagged-with/summer" />
+          <TagImage
+            image={imgSummer}
+            text="Summer"
+            url="/tagged-with/summer"
+            priority={true}
+          />
         </li>
         <li className="ml-0">
-          <TagImage image={imgAutumn} text="Autumn" url="/tagged-with/autumn" />
+          <TagImage
+            image={imgAutumn}
+            text="Autumn"
+            url="/tagged-with/autumn"
+            priority={true}
+          />
         </li>
         <li className="ml-0">
-          <TagImage image={imgWinter} text="Winter" url="/tagged-with/winter" />
+          <TagImage
+            image={imgWinter}
+            text="Winter"
+            url="/tagged-with/winter"
+            priority={true}
+          />
         </li>
       </ul>
 

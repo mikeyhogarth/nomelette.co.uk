@@ -58,6 +58,7 @@ export default function RecipePage({ recipe }: Props) {
               property="image"
               width={500}
               height={500}
+              priority={true}
             />
             <figcaption className="pt-2 text-center italic">
               {recipe.name}

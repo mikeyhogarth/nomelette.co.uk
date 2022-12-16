@@ -15,7 +15,6 @@ export default function Metadata({
     <Head>
       <title key="title">{siteNameTitle}</title>
       <meta name="description" content={description} key="desciption" />
-      <link rel="icon" href="/favicon.ico" />
       <meta name="author" content="Mikey" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Nomelette" />

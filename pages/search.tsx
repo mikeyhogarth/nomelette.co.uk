@@ -3,51 +3,36 @@ import { Metadata, RecipeList, Typography } from "@/components";
 import { FaSpinner } from "react-icons/fa";
 import { Recipe } from "@/types";
 import { search } from "@/services/sanity/contentServices";
-
-// artificial limit to prevent spamming
-const MAX_SEARCH_LIMIT = 50;
-const SEARCH_TERM_LOCAL_STORAGE_KEY = "searchTerm";
-const SEARCH_RESULTS_LOCAL_STORAGE_KEY = "searchResults";
+import { useRouter } from "next/router";
 
 const Search = () => {
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [lastSearchTerm, setLastSearchTerm] = useState<string>("");
   const [results, setResults] = useState<Recipe[]>([]);
-  const [searchCount, setSearchCount] = useState<number>(results.length);
   const [loading, setLoading] = useState<boolean>(false);
 
+  async function performSearch(searchTerm: string) {
+    setResults(await search(searchTerm));
+  }
+
   useEffect(() => {
-    const cachedSearchTerm =
-      localStorage.getItem(SEARCH_TERM_LOCAL_STORAGE_KEY) || "";
-
-    const cachedSearchResults = JSON.parse(
-      localStorage.getItem(SEARCH_RESULTS_LOCAL_STORAGE_KEY) || "[]"
-    );
-
-    setSearchTerm(cachedSearchTerm);
-    setLastSearchTerm(cachedSearchTerm);
-    setResults(cachedSearchResults);
-    setSearchCount(cachedSearchResults.length);
-  }, []);
+    const q = router?.query?.q?.toString();
+    if (q) {
+      performSearch(q);
+      setSearchTerm(q);
+    }
+  }, [router?.query]);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    if (searchCount > MAX_SEARCH_LIMIT) return [];
-
-    setSearchCount(searchCount + 1);
-    setLastSearchTerm(searchTerm);
+    router.query.q = searchTerm;
+    router.push({
+      pathname: router.pathname,
+      query: { q: searchTerm },
+    });
     setLoading(true);
-    const searchResults = await search(searchTerm);
-    setResults(searchResults);
+    performSearch(searchTerm);
     setLoading(false);
-
-    // Set results on local storage so that they remain when back pressed / user
-    // comes back to search page.
-    localStorage.setItem(SEARCH_TERM_LOCAL_STORAGE_KEY, searchTerm);
-    localStorage.setItem(
-      SEARCH_RESULTS_LOCAL_STORAGE_KEY,
-      JSON.stringify(searchResults)
-    );
   }
 
   return (
@@ -68,6 +53,7 @@ const Search = () => {
           required={true}
           minLength={3}
           placeholder="Name or ingredients..."
+          value={searchTerm}
         />
         <button
           type="submit"
@@ -80,15 +66,15 @@ const Search = () => {
       {results.length > 0 && (
         <Typography el="p">
           Showing {results.length} result{results.length > 1 ? "s" : ""} for the
-          search term <span className="font-bold">{lastSearchTerm}</span>.
+          search term <span className="font-bold">{router.query.q}</span>.
         </Typography>
       )}
 
       {loading && <FaSpinner className="animate-spin text-3xl" />}
-      {results.length === 0 && !loading && searchCount > 0 && (
+      {results.length === 0 && !loading && (
         <Typography el="p">
           No results for the search term &quot;
-          {lastSearchTerm}&quot;.
+          {router.query.q}&quot;.
         </Typography>
       )}
 

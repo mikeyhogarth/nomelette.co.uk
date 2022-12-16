@@ -18,6 +18,7 @@ export default function Home() {
           alt="Image representing home cooking"
           width={300}
           height={300}
+          priority={true}
         />
 
         <Image
@@ -27,6 +28,7 @@ export default function Home() {
           alt="Image representing home cooking"
           width={300}
           height={300}
+          priority={true}
         />
         <Image
           className="hidden rounded-full xl:inline"
@@ -35,6 +37,7 @@ export default function Home() {
           alt="Image representing home cooking"
           width={300}
           height={300}
+          priority={true}
         />
       </div>
       <div className="mt-10 text-center">

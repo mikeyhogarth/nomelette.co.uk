@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           {/* PWA settings and icons */}
           <meta name="theme-color" content="#00d2d1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/media/icons/favicon.ico" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

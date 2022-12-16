@@ -1,6 +1,7 @@
 import { FaTimes as FaClose, FaBars as FaHamburgerMenu } from "react-icons/fa";
 import Link from "@/components/Link";
 import { clsx } from "clsx";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -18,7 +19,7 @@ export default function Navigation() {
 
       <ul
         className={clsx(
-          "fixed left-0 top-12 z-10 my-2 w-full list-none overflow-hidden bg-black py-0 text-center transition-height duration-500 ease-in-out md:relative md:top-0 md:my-0 md:inline-block md:h-fit md:bg-transparent md:text-right",
+          "fixed left-0 top-12 z-10 my-2 w-full list-none overflow-hidden bg-black py-0 text-center transition-height duration-500 ease-in-out md:relative md:top-1 md:my-0 md:inline-block md:h-8 md:bg-transparent md:text-right",
           open && "h-screen",
           !open && "h-0"
         )}
@@ -40,14 +41,20 @@ interface NavLinkProps {
 }
 
 function NavLink({ href, text, setOpen }: NavLinkProps) {
+  const router = useRouter();
+  const active = router.pathname === href;
   return (
     <li className="ml-6 py-4 text-2xl md:inline-block md:py-0 md:text-xl">
       <Link
         href={href}
-        className="hover:underline"
+        className={clsx(
+          active &&
+            "underline decoration-4 underline-offset-4 hover:decoration-2 hover:underline-offset-1",
+          "hover:underline"
+        )}
         onClick={() => setOpen(false)}
       >
-        {text}
+        {text} {active}
       </Link>
     </li>
   );

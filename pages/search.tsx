@@ -71,7 +71,7 @@ const Search = () => {
       )}
 
       {loading && <FaSpinner className="animate-spin text-3xl" />}
-      {results.length === 0 && !loading && (
+      {results.length === 0 && !loading && router?.query?.q && (
         <Typography el="p">
           No results for the search term &quot;
           {router.query.q}&quot;.

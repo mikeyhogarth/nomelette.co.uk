@@ -24,7 +24,6 @@ export default function RecipePage({ recipe }: Props) {
   return (
     <>
       <Metadata title={recipe.name} />
-
       <Head>
         {recipe.image && (
           <>
@@ -46,6 +45,7 @@ export default function RecipePage({ recipe }: Props) {
           content={`Recipe for ${recipe.name} by Sheila Hogarth`}
         />
       </Head>
+
       <article className="recipe" vocab="http://schema.org/" typeof="Recipe">
         <Typography el="h1" property="name">
           {recipe.name}

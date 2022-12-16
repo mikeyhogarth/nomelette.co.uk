@@ -8,12 +8,12 @@ interface Props extends React.HTMLAttributes<TypographyElement> {
 }
 
 const headingCommonClasses =
-  "my-6 mt-10 break-words font-bold uppercase tracking-widest";
+  "my-6 break-words font-bold uppercase tracking-widest";
 
 const typograpyClasses = {
   h1: clsx(
     headingCommonClasses,
-    "py-6 text-4xl border-b border-gray-200 text-4xl print:border-none print:text-3xl print:my-4"
+    "py-4 text-4xl border-b border-gray-200 text-4xl print:border-none print:text-3xl print:my-4"
   ),
   h2: clsx(
     headingCommonClasses,

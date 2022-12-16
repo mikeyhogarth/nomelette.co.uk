@@ -48,8 +48,7 @@ function NavLink({ href, text, setOpen }: NavLinkProps) {
       <Link
         href={href}
         className={clsx(
-          active &&
-            "underline decoration-4 underline-offset-4 hover:decoration-2 hover:underline-offset-1",
+          active && "underline decoration-4 underline-offset-4",
           "hover:underline"
         )}
         onClick={() => setOpen(false)}

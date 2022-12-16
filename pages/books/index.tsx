@@ -1,10 +1,7 @@
+import { Link, Metadata, RichText, Typography } from "@/components";
 import { Book } from "@/types";
 import { GetStaticProps } from "next";
-import Link from "@/components/Link";
-import Metadata from "@/components/Metadata";
 import React from "react";
-import RichText from "@/components/RichText";
-import Typography from "@/components/Typography";
 import { allBooks } from "@/services/sanity/contentServices";
 
 interface Props {

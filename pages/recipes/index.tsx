@@ -1,10 +1,6 @@
+import { Metadata, TagImage, TagList, Typography } from "@/components";
 import { GetStaticProps } from "next";
-import Metadata from "@/components/Metadata";
-import TagImage from "@/components/TagImage";
-import TagList from "@/components/TagList";
-import Typography from "@/components/Typography";
 import { getAllTags } from "@/services/sanity/contentServices";
-
 /* Images */
 import imgAutumn from "../../public/media/images/autumn.jpg";
 import imgDesserts from "../../public/media/images/desserts.jpg";

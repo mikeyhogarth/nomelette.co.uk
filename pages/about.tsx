@@ -1,5 +1,4 @@
-import Metadata from "@/components/Metadata";
-import Typography from "@/components/Typography";
+import { Metadata, Typography } from "@/components";
 
 export default function About() {
   return (

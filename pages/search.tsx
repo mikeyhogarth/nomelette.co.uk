@@ -1,9 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
+import { Metadata, RecipeList, Typography } from "@/components";
 import { FaSpinner } from "react-icons/fa";
-import Metadata from "@/components/Metadata";
 import { Recipe } from "@/types";
-import RecipeList from "@/components/RecipeList";
-import Typography from "@/components/Typography";
 import { search } from "@/services/sanity/contentServices";
 
 // artificial limit to prevent spamming

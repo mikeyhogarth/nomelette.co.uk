@@ -1,9 +1,7 @@
 import "../styles/app.css";
+import { Footer, Link, Navigation } from "@/components";
 import type { AppProps } from "next/app";
-import Footer from "@/components/Footer";
 import Head from "next/head";
-import Link from "@/components/Link";
-import Navigation from "@/components/Navigation";
 import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }: AppProps) {

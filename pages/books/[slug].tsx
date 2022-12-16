@@ -1,8 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { Link, Metadata, Typography } from "@/components";
 import { allSlugs, getBook } from "@/services/sanity/contentServices";
 import { Book } from "@/types";
-import Link from "@/components/Link";
-import Metadata from "@/components/Metadata";
 
 interface Props {
   book: Book;

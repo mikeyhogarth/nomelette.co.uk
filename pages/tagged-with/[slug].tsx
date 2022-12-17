@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Metadata, RecipeList, Typography } from "@/components";
+import { Metadata, Pagination, RecipeList, Typography } from "@/components";
 import {
   getAllTags,
   getRecipesTaggedWith,
@@ -17,7 +17,11 @@ export default function RecipePage({ recipes, slug }: Props) {
       <Metadata title={`Recipes tagged with ${slug}`} />
 
       <Typography el="h1">{slug}</Typography>
-      {!!recipes.length && <RecipeList recipes={recipes} />}
+      {!!recipes.length && (
+        <>
+          <RecipeList recipes={recipes} />
+        </>
+      )}
       {!recipes.length && (
         <Typography el="p">
           Very sorry - there are no recipes tagged with <strong>{slug}</strong>

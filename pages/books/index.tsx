@@ -24,13 +24,13 @@ export default function RecipePage({ books }: Props) {
         they contained.
       </Typography>
       {books.map((book) => (
-        <React.Fragment key={book.title}>
+        <article key={book.title} className="mb-14">
           <Typography el="h2">{book.title}</Typography>
           <RichText value={book.description} />
           <Link href={`/books/${book.slug.current}`}>
             Browse recipes from {book.title}
           </Link>
-        </React.Fragment>
+        </article>
       ))}
     </div>
   );

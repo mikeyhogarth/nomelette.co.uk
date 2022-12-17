@@ -63,6 +63,7 @@ export async function getRecipesTaggedWith(tag: string): Promise<Recipe[]> {
 // Search (TODO: Come back and make this smarter at some point)
 const searchQuery =
   "*[_type == 'recipe' && [name, ingredients] match $searchTerms] | order(name)";
+
 export async function search(text: string): Promise<Recipe[]> {
   if (!text.length) return Promise.resolve([]);
 

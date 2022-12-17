@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/components": ["lib/components"],
+      "@/behaviors/*": ["lib/behaviors/*"],
       "@/components/*": ["lib/components/*"],
       "@/services/*": ["lib/services/*"],
       "@/types": ["lib/types.ts"],

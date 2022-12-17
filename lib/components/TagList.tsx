@@ -12,11 +12,15 @@ export default function TagList({ tags }: Props) {
       {(tags || [])
         .sort((a, b) => a.localeCompare(b))
         .map((tag, idx) => (
-          <li key={idx} property="recipeCategory" className="m-0">
+          <li
+            key={idx}
+            property="recipeCategory"
+            className="m-0 hover:brightness-110"
+          >
             <Link
               href={`/tagged-with/${tag}`}
               className={clsx(
-                "rounded-md py-1 px-2 text-base text-white no-underline brightness-100",
+                "rounded-md py-1 px-2 text-base text-white no-underline brightness-110",
                 tag == "vegetarian" && "bg-green-500",
                 tag != "vegetarian" && "bg-primary"
               )}

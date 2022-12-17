@@ -10,16 +10,23 @@ interface Props {
 export default function RecipePage({ book }: Props) {
   return (
     <div>
-      <Metadata title={`Recipes from the book ${book.title}`} />
+      <Metadata title={book.title} />
       <Typography el="h1">
         Recipes from the book &quot;{book.title}&quot;
       </Typography>
-      <ul>
-        {book.recipes.map((r) => (
-          <li key={r.name}>
-            <Link href={`/recipes/${r.slug.current}`}>{r.name}</Link>
-          </li>
-        ))}
+
+      <Typography el="p">
+        Recipes from the book &quot;{book.title}&quot;
+      </Typography>
+
+      <ul className="ml-4 list-disc">
+        {book.recipes
+          .sort((a, b) => (a.name > b.name ? 1 : -1))
+          .map((r) => (
+            <li key={r.name}>
+              <Link href={`/recipes/${r.slug.current}`}>{r.name}</Link>
+            </li>
+          ))}
       </ul>
     </div>
   );

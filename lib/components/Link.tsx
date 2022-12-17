@@ -9,7 +9,7 @@ const Link = ({
   return (
     <NextLink
       href={href}
-      className="text-primary underline visited:text-secondary hover:underline hover:brightness-110 hover:transition-all"
+      className="text-secondary underline  hover:underline hover:brightness-150 hover:transition-all"
       {...props}
     >
       {children}

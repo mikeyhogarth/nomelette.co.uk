@@ -10,3 +10,4 @@ export { default as RichText } from "./RichText";
 export { default as TagImage } from "./TagImage";
 export { default as TagList } from "./TagList";
 export { default as Typography } from "./Typography";
+export { default as Pagination } from "./Pagination";

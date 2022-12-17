@@ -43,7 +43,7 @@ const Search = () => {
   return (
     <>
       <Metadata title="Search" />
-      <Typography el="h2">Search</Typography>
+      <Typography el="h1">Search</Typography>
       <Typography el="p">Enter search terms into the field below.</Typography>
       <form onSubmit={handleSubmit}>
         <input
@@ -69,9 +69,9 @@ const Search = () => {
 
       {!!data?.length && (
         <>
-          <Typography el="p">
-            Showing {data.length} result{data.length > 1 ? "s" : ""} for the
-            search term <span className="font-bold">{router.query.q}</span>.
+          <Typography el="p" className="mt-4">
+            {data.length} result{data.length > 1 ? "s" : ""} for{" "}
+            <span className="font-bold">{router.query.q}</span>.
           </Typography>
           <RecipeList recipes={data} />
         </>

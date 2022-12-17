@@ -64,6 +64,8 @@ export async function getRecipesTaggedWith(tag: string): Promise<Recipe[]> {
 const searchQuery =
   "*[_type == 'recipe' && [name, ingredients] match $searchTerms]";
 export async function search(text: string): Promise<Recipe[]> {
+  if (!text.length) return Promise.resolve([]);
+
   const searchTerms = text.split(" ").map((t) => `*${t.trim()}*`);
 
   return client.fetch(searchQuery, {

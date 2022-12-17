@@ -1,8 +1,11 @@
 import "../styles/app.css";
 import { Footer, Link, Navigation } from "@/components";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
+
+const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -34,7 +37,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         className="min-h-fit px-6 font-sans md:px-10"
         style={{ minHeight: "60vh" }}
       >
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </main>
       <Footer />
     </>

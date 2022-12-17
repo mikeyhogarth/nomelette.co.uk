@@ -1,44 +1,44 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Metadata, RecipeList, Typography } from "@/components";
 import { FaSpinner } from "react-icons/fa";
-import { Recipe } from "@/types";
 import { search } from "@/services/sanity/contentServices";
+import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 
 const Search = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [results, setResults] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>("");
 
-  async function performSearch(searchTerm: string) {
-    setResults(await search(searchTerm));
-  }
+  const { isLoading, isError, data } = useQuery({
+    queryKey: ["search", submittedSearchTerm],
+    queryFn: () => search(submittedSearchTerm),
+    enabled: Boolean(submittedSearchTerm),
+    staleTime: Infinity,
+  });
 
   useEffect(() => {
-    const q = router?.query?.q?.toString();
-    if (q) {
-      performSearch(q);
-      setSearchTerm(q);
-    }
+    const q = router?.query?.q?.toString() || "";
+    setSearchTerm(q);
+    setSubmittedSearchTerm(q);
   }, [router?.query]);
 
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault();
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    setSubmittedSearchTerm(searchTerm);
     router.query.q = searchTerm;
     router.push({
       pathname: router.pathname,
       query: { q: searchTerm },
     });
-    setLoading(true);
-    performSearch(searchTerm);
-    setLoading(false);
   }
+
+  if (isLoading) return <FaSpinner className="animate-spin text-3xl" />;
+  if (isError || !data) return <p>Error</p>;
 
   return (
     <>
       <Metadata title="Search" />
-
       <Typography el="h2">Search</Typography>
       <Typography el="p">Enter search terms into the field below.</Typography>
       <form onSubmit={handleSubmit}>
@@ -46,13 +46,13 @@ const Search = () => {
           id="searchterm"
           name="searchterm"
           aria-label="Search"
-          onChange={(event) => setSearchTerm(event.target.value)}
           className="h-12 w-8/12 border border-primary p-2  md:w-72"
           type="search"
           autoComplete="off"
           required={true}
           minLength={3}
           placeholder="Name or ingredients..."
+          onChange={(e) => setSearchTerm(e.target.value)}
           value={searchTerm}
         />
         <button
@@ -63,22 +63,21 @@ const Search = () => {
         </button>
       </form>
 
-      {results.length > 0 && (
+      {data.length > 0 && (
         <Typography el="p">
-          Showing {results.length} result{results.length > 1 ? "s" : ""} for the
+          Showing {data.length} result{data.length > 1 ? "s" : ""} for the
           search term <span className="font-bold">{router.query.q}</span>.
         </Typography>
       )}
 
-      {loading && <FaSpinner className="animate-spin text-3xl" />}
-      {results.length === 0 && !loading && router?.query?.q && (
+      {data.length === 0 && router?.query?.q && (
         <Typography el="p">
           No results for the search term &quot;
           {router.query.q}&quot;.
         </Typography>
       )}
 
-      <RecipeList recipes={results} />
+      <RecipeList recipes={data} />
     </>
   );
 };

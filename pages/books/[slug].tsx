@@ -11,9 +11,7 @@ export default function RecipePage({ book }: Props) {
   return (
     <div>
       <Metadata title={book.title} />
-      <Typography el="h1">
-        Recipes from the book &quot;{book.title}&quot;
-      </Typography>
+      <Typography el="h1">{book.title}</Typography>
 
       <Typography el="p">
         Recipes from the book &quot;{book.title}&quot;

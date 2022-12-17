@@ -131,7 +131,6 @@ export default function RecipePage({ recipe }: Props) {
   );
 }
 
-// This function gets called at build time.
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await allSlugs("recipe");
   const paths = slugs.map((slug) => ({
@@ -141,7 +140,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: "blocking" };
 };
 
-// This function gets called at build time.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const recipe = await getRecipe(params?.slug?.toString() || "");
   return { props: { recipe }, notFound: !recipe, revalidate: 10 };

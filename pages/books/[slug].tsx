@@ -34,7 +34,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: "blocking" };
 };
 
-// This function gets called at build time.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const book = await getBook(params?.slug?.toString() || "");
   return { props: { book }, notFound: !book, revalidate: 10 };

@@ -100,7 +100,6 @@ export default function RecipePage({ tags }: Props) {
   );
 }
 
-// This function gets called at build time.
 export const getStaticProps: GetStaticProps = async () => {
   const tags = await getAllTags();
   return { props: { tags }, revalidate: 10 };

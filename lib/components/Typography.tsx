@@ -21,9 +21,9 @@ const typograpyClasses = {
   ),
   h3: clsx(
     headingCommonClasses,
-    "text-2xl text-secondary print:my-4 print:text-base"
+    "text-xl text-black mb-1 print:my-4 print:text-base"
   ),
-  p: "my-2 text-base leading-loose",
+  p: "my-2 text-base leading-normal",
 };
 
 const Typography = ({ el, children, className }: Props) => {

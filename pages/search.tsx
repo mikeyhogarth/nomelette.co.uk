@@ -11,7 +11,7 @@ const Search = () => {
   const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>("");
 
   const { isLoading, isError, data } = useQuery({
-    queryKey: ["search", submittedSearchTerm],
+    queryKey: ["search", submittedSearchTerm.toLowerCase()],
     queryFn: () => search(submittedSearchTerm),
     enabled: Boolean(submittedSearchTerm),
     staleTime: Infinity,
@@ -33,8 +33,7 @@ const Search = () => {
     });
   }
 
-  if (isLoading) return <FaSpinner className="animate-spin text-3xl" />;
-  if (isError || !data) return <p>Error</p>;
+  if (isError) return <p>Error retrieving search results</p>;
 
   return (
     <>
@@ -63,21 +62,26 @@ const Search = () => {
         </button>
       </form>
 
-      {data.length > 0 && (
-        <Typography el="p">
-          Showing {data.length} result{data.length > 1 ? "s" : ""} for the
-          search term <span className="font-bold">{router.query.q}</span>.
-        </Typography>
+      {isLoading && submittedSearchTerm && (
+        <FaSpinner className="animate-spin text-3xl" />
       )}
 
-      {data.length === 0 && router?.query?.q && (
+      {data?.length && (
+        <>
+          <Typography el="p">
+            Showing {data.length} result{data.length > 1 ? "s" : ""} for the
+            search term <span className="font-bold">{router.query.q}</span>.
+          </Typography>
+          <RecipeList recipes={data} />
+        </>
+      )}
+
+      {data?.length && submittedSearchTerm.length && (
         <Typography el="p">
           No results for the search term &quot;
           {router.query.q}&quot;.
         </Typography>
       )}
-
-      <RecipeList recipes={data} />
     </>
   );
 };

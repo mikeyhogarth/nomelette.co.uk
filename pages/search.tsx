@@ -30,6 +30,7 @@ const Search = () => {
     e.preventDefault();
     const q = searchInput.current?.value || "";
     setSubmittedSearchTerm(q);
+    setCurrentPage(0);
     router.query.q = q;
     router.push({
       pathname: router.pathname,

@@ -2,7 +2,11 @@ import { useState } from "react";
 
 const perPage = 20;
 
-function getTotalPages<T>(perPage: number, items: ArrayLike<T>): number {
+function getTotalPages<T>(
+  perPage: number,
+  items: ArrayLike<T> | undefined
+): number {
+  if (!items) return 0;
   return Math.ceil(items.length / perPage);
 }
 

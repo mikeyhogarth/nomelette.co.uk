@@ -1,13 +1,18 @@
 import { Link, TagList, Typography } from "@/components";
 import Image from "next/image";
 import { Recipe } from "@/types";
+import RecipeListSkeleton from "./RecipeListSkeleton";
 import { urlForImage } from "@/services/sanity/imageServices";
 
 interface Props {
   recipes: Recipe[];
+  isLoading?: boolean;
 }
 
-const RecipeList = ({ recipes }: Props) => {
+const RecipeList = ({ recipes, isLoading }: Props) => {
+  if (isLoading) return <RecipeListSkeleton />;
+  if (!recipes) return null;
+
   return (
     <>
       <ul className="list-none ">

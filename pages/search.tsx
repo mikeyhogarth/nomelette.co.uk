@@ -1,7 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Metadata, Pagination, RecipeList, Typography } from "@/components";
-import { FaSpinner } from "react-icons/fa";
-import { Recipe } from "@/types";
 import { search } from "@/services/sanity/contentServices";
 import { usePagination } from "@/hooks/usePagination";
 import { useQuery } from "@tanstack/react-query";
@@ -15,7 +13,7 @@ const Search = () => {
   const { perPage, currentPage, setCurrentPage, getTotalPages, getPage } =
     usePagination();
 
-  const { isLoading, isError, data } = useQuery({
+  const { isFetching, isError, data } = useQuery({
     queryKey: ["search", submittedSearchTerm.toLowerCase()],
     queryFn: () => search(submittedSearchTerm),
     enabled: Boolean(submittedSearchTerm),
@@ -38,9 +36,6 @@ const Search = () => {
       query: { q },
     });
   }
-
-  if (isLoading && submittedSearchTerm)
-    return <FaSpinner className="animate-spin text-3xl" />;
 
   if (isError) return <p>Error retrieving search results</p>;
 
@@ -71,29 +66,32 @@ const Search = () => {
         </button>
       </form>
 
-      {!!data?.length && (
-        <>
+      <>
+        {!!data && !!data.length && (
           <Typography el="p" className="mt-4">
             {data.length} result{data.length > 1 ? "s" : ""} for{" "}
-            <span className="font-bold">{router.query.q}</span>.
+            <em className="font-semibold">{router.query.q}</em>.
           </Typography>
+        )}
 
-          <Pagination
-            totalPages={getTotalPages(perPage, data)}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          >
-            <RecipeList recipes={getPage(data)} />
-          </Pagination>
-        </>
-      )}
+        {!!data &&
+          !data.length &&
+          !isFetching &&
+          !!submittedSearchTerm.length && (
+            <Typography el="p">
+              No results for <em className="font-semibold">{router.query.q}</em>
+              .
+            </Typography>
+          )}
 
-      {!data?.length && !!submittedSearchTerm.length && (
-        <Typography el="p">
-          No results for the search term &quot;
-          {router.query.q}&quot;.
-        </Typography>
-      )}
+        <Pagination
+          totalPages={getTotalPages(perPage, data)}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        >
+          <RecipeList recipes={getPage(data)} isLoading={isFetching} />
+        </Pagination>
+      </>
     </>
   );
 };

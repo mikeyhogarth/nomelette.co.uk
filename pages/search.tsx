@@ -83,7 +83,7 @@ const Search = () => {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           >
-            <RecipeList recipes={getPage<Recipe>(data)} />
+            <RecipeList recipes={getPage(data)} />
           </Pagination>
         </>
       )}

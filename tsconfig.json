@@ -16,9 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components": ["lib/components"],
       "@/behaviors/*": ["lib/behaviors/*"],
+      "@/components": ["lib/components"],
       "@/components/*": ["lib/components/*"],
+      "@/hooks/*": ["lib/hooks/*"],
       "@/services/*": ["lib/services/*"],
       "@/types": ["lib/types.ts"],
       "@/studio/*": ["studio/*"]

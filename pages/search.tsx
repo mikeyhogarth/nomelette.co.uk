@@ -1,7 +1,9 @@
 import { FormEvent, useEffect, useState } from "react";
-import { Metadata, RecipeList, Typography } from "@/components";
+import { Metadata, Pagination, RecipeList, Typography } from "@/components";
 import { FaSpinner } from "react-icons/fa";
+import { Recipe } from "@/types";
 import { search } from "@/services/sanity/contentServices";
+import { usePagination } from "@/hooks/usePagination";
 import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
 import { useRouter } from "next/router";
@@ -10,6 +12,8 @@ const Search = () => {
   const router = useRouter();
   const searchInput = useRef<HTMLInputElement>(null);
   const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>("");
+  const { perPage, currentPage, setCurrentPage, getTotalPages, getPage } =
+    usePagination();
 
   const { isLoading, isError, data } = useQuery({
     queryKey: ["search", submittedSearchTerm.toLowerCase()],
@@ -73,7 +77,14 @@ const Search = () => {
             {data.length} result{data.length > 1 ? "s" : ""} for{" "}
             <span className="font-bold">{router.query.q}</span>.
           </Typography>
-          <RecipeList recipes={data} />
+
+          <Pagination
+            totalPages={getTotalPages(perPage, data)}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          >
+            <RecipeList recipes={getPage<Recipe>(data)} />
+          </Pagination>
         </>
       )}
 

@@ -6,10 +6,6 @@ interface PaginationControl {
   clickHandler: () => void;
 }
 
-export function getTotalPages<T>(perPage: number, items: ArrayLike<T>): number {
-  return Math.ceil(items.length / perPage);
-}
-
 export function getPaginationControls(
   currentPage: number,
   totalPages: number,

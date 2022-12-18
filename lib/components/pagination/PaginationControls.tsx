@@ -2,16 +2,18 @@ import { clsx } from "clsx";
 import { getPaginationControls } from "@/behaviors/pagination";
 
 interface Props {
+  title: string;
   currentPage: number;
   totalPages: number;
   scrollTopOnClick?: boolean;
   setCurrentPage: (page: number) => void;
 }
 
-const Pagination = ({
+const PaginationControls = ({
   currentPage,
   totalPages,
   scrollTopOnClick,
+  title,
   setCurrentPage,
 }: Props) => {
   if (totalPages < 2) return null;
@@ -19,12 +21,11 @@ const Pagination = ({
   const controls = getPaginationControls(
     currentPage,
     totalPages,
-
     setCurrentPage
   );
 
   return (
-    <nav title="pagination" className="my-4">
+    <nav title={title} className="my-4">
       <ul>
         {controls.map(
           ({ label, title, isCurrent, disabled, clickHandler }, idx) => (
@@ -54,4 +55,4 @@ const Pagination = ({
   );
 };
 
-export default Pagination;
+export default PaginationControls;

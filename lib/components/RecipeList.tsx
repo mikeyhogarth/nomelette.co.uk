@@ -2,14 +2,12 @@ import { Link, TagList, Typography } from "@/components";
 import Image from "next/image";
 import { Recipe } from "@/types";
 import { urlForImage } from "@/services/sanity/imageServices";
-import { useState } from "react";
 
 interface Props {
   recipes: Recipe[];
-  perPage?: number;
 }
 
-const RecipeList = ({ recipes, perPage = 20 }: Props) => {
+const RecipeList = ({ recipes }: Props) => {
   return (
     <>
       <ul className="list-none ">

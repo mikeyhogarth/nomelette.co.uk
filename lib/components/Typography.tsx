@@ -27,7 +27,7 @@ const typograpyClasses = {
 };
 
 const Typography = ({ el, children, className }: Props) => {
-  const Element = ({ ...props }: HTMLAttributes<HTMLHeadingElement>) =>
+  const Element = ({ ...props }: HTMLAttributes<TypographyElement>) =>
     React.createElement(el, props, children);
 
   return (

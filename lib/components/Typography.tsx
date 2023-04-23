@@ -5,6 +5,7 @@ type TypographyElement = HTMLHeadingElement | HTMLParagraphElement;
 
 interface Props extends React.HTMLAttributes<TypographyElement> {
   el: "h1" | "h2" | "h3" | "p";
+  align?: "center" | "left" | "right";
 }
 
 const headingCommonClasses =
@@ -26,12 +27,21 @@ const typograpyClasses = {
   p: "my-2 text-base leading-normal",
 };
 
-const Typography = ({ el, children, className }: Props) => {
+const Typography = ({ el, children, className, align }: Props) => {
   const Element = ({ ...props }: HTMLAttributes<TypographyElement>) =>
     React.createElement(el, props, children);
 
   return (
-    <Element className={className || typograpyClasses[el]}>{children}</Element>
+    <Element
+      className={clsx(
+        className || typograpyClasses[el],
+        align == "center" && "text-center",
+        align == "left" && "text-left",
+        align == "right" && "text-right"
+      )}
+    >
+      {children}
+    </Element>
   );
 };
 

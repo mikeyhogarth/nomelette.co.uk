@@ -32,7 +32,9 @@ export default function RecipePage({ tags }: Props) {
     <div>
       <Metadata title="Browse" />
       <Typography el="h1">Browse</Typography>
-      <Typography el="h2">Browse by season</Typography>
+      <Typography el="h2" align="center">
+        Browse by season
+      </Typography>
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
           <TagImage
@@ -68,7 +70,9 @@ export default function RecipePage({ tags }: Props) {
         </li>
       </ul>
 
-      <Typography el="h2">Browse by Course</Typography>
+      <Typography el="h2" align="center">
+        Browse by Course
+      </Typography>
       <ul className="flex list-none flex-wrap justify-center gap-x-5 gap-y-0 md:flex-nowrap">
         <li className="ml-0">
           <TagImage
@@ -93,7 +97,9 @@ export default function RecipePage({ tags }: Props) {
         </li>
       </ul>
 
-      <Typography el="h2">Browse by tag</Typography>
+      <Typography el="h2" align="center">
+        Browse by tag
+      </Typography>
       <TagList
         tags={tags.filter((t) => t?.length && !SPECIAL_TAGS.includes(t))}
       />

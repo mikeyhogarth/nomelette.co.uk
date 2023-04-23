@@ -33,7 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
         <Navigation />
       </header>
-      <main className="min-h-screen px-6 font-sans md:px-10">
+      <main className="min-h-screen px-6 font-sans leading-loose tracking-wide md:px-10">
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
         </QueryClientProvider>

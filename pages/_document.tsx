@@ -32,7 +32,7 @@ class MyDocument extends Document {
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin="crossorigin"
+            crossOrigin=""
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
